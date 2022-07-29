@@ -52,7 +52,9 @@ class _Screen1State extends State<Screen1> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () => {},
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                     child: Image.asset(
                       'assets/icons/ic_back.png',
                       fit: BoxFit.cover,

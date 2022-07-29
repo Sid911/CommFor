@@ -46,37 +46,41 @@ class _Screen3State extends State<Screen3> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () => {navigateToPreviousScreen(context)},
-                        child: Image.asset(
-                          'assets/icons/ic_back.png',
-                          fit: BoxFit.cover,
-                          width: 20,
-                          height: 20,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () => {navigateToPreviousScreen(context)},
+                          child: Image.asset(
+                            'assets/icons/ic_back.png',
+                            fit: BoxFit.cover,
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: const Text(
-                          SectionB.SECTION_B_SECTION_2,
-                          style: CustomStyle.screenTitle,
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            SectionB.SECTION_B_SECTION_2,
+                            style: CustomStyle.screenTitle,
+                          ),
                         ),
-                      ),
-                      InkWell(
-                        onTap: () => {},
-                        child: Image.asset(
-                          'assets/icons/ic_close.png',
-                          fit: BoxFit.cover,
-                          width: 30,
-                          height: 30,
+                        InkWell(
+                          onTap: () => {},
+                          child: Image.asset(
+                            'assets/icons/ic_close.png',
+                            fit: BoxFit.cover,
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -104,391 +108,415 @@ class _Screen3State extends State<Screen3> {
                   ),
                   SizedBox(
                     height: 175,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text("Timber", style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Self Consumption",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  1, response[1], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Market Sale",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  2, response[2], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Management",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  3, response[3], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Exclusion",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  4, response[4], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text("Timber", style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Self Consumption",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    1, response[1], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Market Sale",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    2, response[2], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Management",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    3, response[3], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Exclusion",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    4, response[4], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 175,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text("Fuelwood", style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Self Consumption",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  5, response[5], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Market Sale",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  6, response[6], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Management",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  7, response[7], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Exclusion",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  8, response[8], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text("Fuelwood", style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Self Consumption",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    5, response[5], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Market Sale",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    6, response[6], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Management",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    7, response[7], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Exclusion",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    8, response[8], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 175,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text("Grazing", style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Self Consumption",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  9, response[9], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Market Sale",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  10, response[10], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Management",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  11, response[11], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Exclusion",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  12, response[12], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text("Grazing", style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Self Consumption",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    9, response[9], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Market Sale",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    10, response[10], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Management",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    11, response[11], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Exclusion",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    12, response[12], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 175,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text("Seasonal Forest Products",
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Self Consumption",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  13, response[13], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Market Sale",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  14, response[14], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Management",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  15, response[15], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Exclusion",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  16, response[16], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text("Seasonal Forest Products",
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Self Consumption",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    13, response[13], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Market Sale",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    14, response[14], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Management",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    15, response[15], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Exclusion",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    16, response[16], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 175,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text("Wildlife", style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Self Consumption",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  17, response[17], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Market Sale",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  18, response[18], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Management",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  19, response[19], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Exclusion",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  20, response[20], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text("Wildlife", style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Self Consumption",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    17, response[17], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Market Sale",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    18, response[18], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Management",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    19, response[19], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Exclusion",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    20, response[20], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 175,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text("Other", style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Self Consumption",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  21, response[21], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Market Sale",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  22, response[22], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Management",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  23, response[23], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                child: Text("Exclusion",
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  24, response[24], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text("Other", style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Self Consumption",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    21, response[21], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Market Sale",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    22, response[22], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Management",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    23, response[23], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  child: Text("Exclusion",
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    24, response[24], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

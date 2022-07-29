@@ -54,37 +54,41 @@ class _Screen2State extends State<Screen2> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () => {navigateToPreviousScreen(context)},
-                        child: Image.asset(
-                          'assets/icons/ic_back.png',
-                          fit: BoxFit.cover,
-                          width: 20,
-                          height: 20,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () => {navigateToPreviousScreen(context)},
+                          child: Image.asset(
+                            'assets/icons/ic_back.png',
+                            fit: BoxFit.cover,
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: const Text(
-                          SectionB.SECTION_B_SECTION_2,
-                          style: CustomStyle.screenTitle,
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            SectionB.SECTION_B_SECTION_2,
+                            style: CustomStyle.screenTitle,
+                          ),
                         ),
-                      ),
-                      InkWell(
-                        onTap: () => {},
-                        child: Image.asset(
-                          'assets/icons/ic_close.png',
-                          fit: BoxFit.cover,
-                          width: 30,
-                          height: 30,
+                        InkWell(
+                          onTap: () => {},
+                          child: Image.asset(
+                            'assets/icons/ic_close.png',
+                            fit: BoxFit.cover,
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Column(
                     children: [

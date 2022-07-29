@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -46,31 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBjMRe3dbhrTt1EBlgAmDyOq8IIdQhNbYw',
+    appId: '1:191546066082:web:3d0978ae4966a717d483fb',
+    messagingSenderId: '191546066082',
+    projectId: 'commfor-backend',
+    authDomain: 'commfor-backend.firebaseapp.com',
+    storageBucket: 'commfor-backend.appspot.com',
+    measurementId: 'G-R5WYGCBGRD',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDkkbU5Nh8ONAAfQBaOY1q7UMJ4drgixH4',
-    appId: '1:862872272959:android:bc09da9198aa13acb6788a',
-    messagingSenderId: '862872272959',
-    projectId: 'ifri-23ae3',
-    storageBucket: 'ifri-23ae3.appspot.com',
+    apiKey: 'AIzaSyD-Tg5a7d39Er9RSGEZj1_FB_s_anz_gaA',
+    appId: '1:191546066082:android:9bc36449173251c2d483fb',
+    messagingSenderId: '191546066082',
+    projectId: 'commfor-backend',
+    storageBucket: 'commfor-backend.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBa5pKjYwftAAH4RKuWix55KwrDzaco5rE',
-    appId: '1:862872272959:ios:aacafb4b3bdb9917b6788a',
-    messagingSenderId: '862872272959',
-    projectId: 'ifri-23ae3',
-    storageBucket: 'ifri-23ae3.appspot.com',
-    iosClientId: '862872272959-u9s15bod6pl5lb7r4vgsd4112ftvk2tn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDSltMjvQyHDWkf8vlJV4tfOMCLaziuQ8g',
+    appId: '1:191546066082:ios:1803da2c767ee0edd483fb',
+    messagingSenderId: '191546066082',
+    projectId: 'commfor-backend',
+    storageBucket: 'commfor-backend.appspot.com',
+    iosClientId: '191546066082-dt389oe78ea3mnucdqlqchbr1r5kga7l.apps.googleusercontent.com',
     iosBundleId: 'com.example.ifri',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBa5pKjYwftAAH4RKuWix55KwrDzaco5rE',
-    appId: '1:862872272959:ios:aacafb4b3bdb9917b6788a',
-    messagingSenderId: '862872272959',
-    projectId: 'ifri-23ae3',
-    storageBucket: 'ifri-23ae3.appspot.com',
-    iosClientId: '862872272959-u9s15bod6pl5lb7r4vgsd4112ftvk2tn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDSltMjvQyHDWkf8vlJV4tfOMCLaziuQ8g',
+    appId: '1:191546066082:ios:1803da2c767ee0edd483fb',
+    messagingSenderId: '191546066082',
+    projectId: 'commfor-backend',
+    storageBucket: 'commfor-backend.appspot.com',
+    iosClientId: '191546066082-dt389oe78ea3mnucdqlqchbr1r5kga7l.apps.googleusercontent.com',
     iosBundleId: 'com.example.ifri',
   );
 }

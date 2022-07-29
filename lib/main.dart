@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
         title: 'IFRI',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.green),
-        initialRoute: '/',
+        initialRoute: '/login',
         routes: {
           '/': (BuildContext ctx) {
             return const Screen12();

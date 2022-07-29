@@ -29,6 +29,13 @@
             {
               "client_id": "191546066082-ft8klld6ohfuhu0nij8fdgot2cln1poq.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "191546066082-dt389oe78ea3mnucdqlqchbr1r5kga7l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ifri"
+              }
             }
           ]
         }

@@ -120,7 +120,7 @@ class _RegistrationCardState extends State<RegistrationCard> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: TextField(
-                  controller: emailController,
+                  controller: orgNameController,
                   keyboardType: TextInputType.emailAddress,
                   style: const TextStyle(
                     color: Color(0xFFD1D0BD),
@@ -150,6 +150,7 @@ class _RegistrationCardState extends State<RegistrationCard> {
                       ),
                     );
                   }
+                  Navigator.pop(context);
                 },
                 color: const Color(0xFFD1D0BD),
                 clipBehavior: Clip.antiAlias,

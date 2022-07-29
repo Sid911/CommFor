@@ -8,7 +8,7 @@ class FirebaseAuthService {
 
   Future<UserCredential?> registerWithEmailAndPassword(
     String email,
-    password,
+    String password,
   ) async {
     try {
       final credential =
@@ -16,10 +16,10 @@ class FirebaseAuthService {
         email: email,
         password: password,
       );
+      return credential;
     } on Exception catch (e) {
       rethrow;
     }
-    return null;
   }
 
   Future<UserCredential?> loginWithEmailAndPassword(

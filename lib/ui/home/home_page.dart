@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:provider/provider.dart';
@@ -19,29 +21,44 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Homepage"), actions: [
-        IconButton(
-          onPressed: () {
-            authService.logout();
-          },
-          icon: const Icon(
-            Icons.logout,
-          ),
-        )
-      ]),
-      backgroundColor: const Color(0xFF12160F),
-      body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/images/BG Image@2x.png'),
+    final size = MediaQuery.of(context).size;
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/BG Image@2x.png",
+          height: size.height,
+          width: size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            title: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                child: const Text("For ManGoES"),
+              ),
             ),
+            backgroundColor: Colors.transparent,
+            actions: [
+              IconButton(
+                onPressed: () {
+                  authService.logout();
+                },
+                icon: const Icon(
+                  Icons.logout,
+                ),
+              )
+            ],
+          ),
+          backgroundColor: Colors.transparent,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [],
           ),
         ),
-      ),
+      ],
     );
   }
 }

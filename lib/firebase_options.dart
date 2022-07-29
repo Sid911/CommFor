@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:191546066082:android:9bc36449173251c2d483fb',
     messagingSenderId: '191546066082',
     projectId: 'commfor-backend',
+    databaseURL: 'https://commfor-backend-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'commfor-backend.appspot.com',
   );
 
@@ -62,6 +63,7 @@ class DefaultFirebaseOptions {
     appId: '1:191546066082:ios:1803da2c767ee0edd483fb',
     messagingSenderId: '191546066082',
     projectId: 'commfor-backend',
+    databaseURL: 'https://commfor-backend-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'commfor-backend.appspot.com',
     iosClientId: '191546066082-dt389oe78ea3mnucdqlqchbr1r5kga7l.apps.googleusercontent.com',
     iosBundleId: 'com.example.ifri',

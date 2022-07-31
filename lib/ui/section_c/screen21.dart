@@ -49,609 +49,610 @@ class _Screen21State extends State<Screen21> {
       return Container();
     } else {
       return SafeArea(
-          child: Scaffold(
-        body: SingleChildScrollView(
-          child: ColoredBox(
-            color: const Color(0xFF12160F),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () => {navigateToPreviousScreen(context)},
-                        child: Image.asset(
-                          'assets/icons/ic_back.png',
-                          fit: BoxFit.cover,
-                          width: 20,
-                          height: 20,
+        child: Scaffold(
+          body: SingleChildScrollView(
+            child: ColoredBox(
+              color: const Color(0xFF12160F),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () => {navigateToPreviousScreen(context)},
+                          child: Image.asset(
+                            'assets/icons/ic_back.png',
+                            fit: BoxFit.cover,
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: const Text(
-                          SectionC.SECTION_C_SECTION_6,
-                          style: CustomStyle.screenTitle,
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            SectionC.SECTION_C_SECTION_6,
+                            style: CustomStyle.screenTitle,
+                          ),
                         ),
-                      ),
-                      InkWell(
-                        onTap: () => {},
-                        child: Image.asset(
-                          'assets/icons/ic_close.png',
-                          fit: BoxFit.cover,
-                          width: 25,
-                          height: 25,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    child: const SizedBox(
-                        height: 20,
-                        width: 300,
-                        child: Divider(color: Color(0xffD1D0BD))),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 10.0, right: 10.0, top: 25.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(SectionC.SECTION_C_QUESTION_40,
-                            style: CustomStyle.questionTitle),
-                        SizedBox(
-                          height: 20,
+                        InkWell(
+                          onTap: () => {},
+                          child: Image.asset(
+                            'assets/icons/ic_close.png',
+                            fit: BoxFit.cover,
+                            width: 25,
+                            height: 25,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_1,
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_1,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  1, response[1], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_2,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  2, response[2], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_3,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  3, response[3], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_4,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  4, response[4], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_5,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  5, response[5], setResponse),
-                            ],
+                    Container(
+                      alignment: Alignment.center,
+                      child: const SizedBox(
+                          height: 20,
+                          width: 300,
+                          child: Divider(color: Color(0xffD1D0BD))),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 10.0, right: 10.0, top: 25.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(SectionC.SECTION_C_QUESTION_40,
+                              style: CustomStyle.questionTitle),
+                          SizedBox(
+                            height: 20,
                           ),
                         ],
-                      )
-                    ]),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_2,
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
                       ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_1,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  6, response[6], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_2,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  7, response[7], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_3,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  8, response[8], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_4,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  9, response[9], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_5,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  10, response[10], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_3,
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_1,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  11, response[11], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_2,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  12, response[12], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_3,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  13, response[13], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_4,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  14, response[14], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_5,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  15, response[15], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_4,
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_1,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  16, response[16], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_2,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  17, response[17], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_3,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  18, response[18], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_4,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  19, response[19], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_5,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  20, response[20], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_5,
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_1,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  21, response[21], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_2,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  22, response[22], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_3,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  23, response[23], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_4,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  24, response[24], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_5,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  25, response[25], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: Row(children: [
-                      const SizedBox(
-                          width: 75,
-                          child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_6,
-                              style: CustomStyle.answer)),
-                      const SizedBox(width: 2),
-                      const VerticalDivider(
-                        color: Color(0xffD1D0BD),
-                        thickness: 0.5,
-                      ),
-                      const SizedBox(width: 2),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_1,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  26, response[26], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_2,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  27, response[27], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_3,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  28, response[28], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_4,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  29, response[29], setResponse),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 125,
-                                height: 25,
-                                child: Text(
-                                    SectionC.SECTION_C_QUESTION_40_RIGHT_5,
-                                    style: CustomStyle.answer),
-                              ),
-                              CustomOption.yesNoButtons(
-                                  30, response[30], setResponse),
-                            ],
-                          ),
-                        ],
-                      )
-                    ]),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                          onTap: () => syncData(context),
-                          splashColor: Colors.lightBlue,
-                          borderRadius: BorderRadius.circular(2),
-                          child: CustomButton.nextButton),
-                    ],
-                  ),
-                ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 230,
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_1,
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_1,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    1, response[1], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_2,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    2, response[2], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_3,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    3, response[3], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_4,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    4, response[4], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_5,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    5, response[5], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 230,
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_2,
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_1,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    6, response[6], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_2,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    7, response[7], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_3,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    8, response[8], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_4,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    9, response[9], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_5,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    10, response[10], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 230,
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_3,
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_1,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    11, response[11], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_2,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    12, response[12], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_3,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    13, response[13], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_4,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    14, response[14], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_5,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    15, response[15], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 230,
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_4,
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_1,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    16, response[16], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_2,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    17, response[17], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_3,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    18, response[18], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_4,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    19, response[19], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_5,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    20, response[20], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 230,
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_5,
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_1,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    21, response[21], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_2,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    22, response[22], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_3,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    23, response[23], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_4,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    24, response[24], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_5,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    25, response[25], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 230,
+                      child: Row(children: [
+                        const SizedBox(
+                            width: 75,
+                            child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_6,
+                                style: CustomStyle.answer)),
+                        const SizedBox(width: 2),
+                        const VerticalDivider(
+                          color: Color(0xffD1D0BD),
+                          thickness: 0.5,
+                        ),
+                        const SizedBox(width: 2),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_1,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    26, response[26], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_2,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    27, response[27], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_3,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    28, response[28], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_4,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    29, response[29], setResponse),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 125,
+                                  height: 25,
+                                  child: Text(
+                                      SectionC.SECTION_C_QUESTION_40_RIGHT_5,
+                                      style: CustomStyle.answer),
+                                ),
+                                CustomOption.yesNoButtons(
+                                    30, response[30], setResponse),
+                              ],
+                            ),
+                          ],
+                        )
+                      ]),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                            onTap: () => syncData(context),
+                            splashColor: Colors.lightBlue,
+                            borderRadius: BorderRadius.circular(2),
+                            child: CustomButton.nextButton),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ));
+      );
     }
   }
 

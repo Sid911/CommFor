@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:ifri/constants/constants.dart';
 import 'package:ifri/constants/section_b.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
@@ -13,7 +11,8 @@ import 'package:ifri/ui/section_b/screen7.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:provider/provider.dart';
 
 class Screen6 extends StatefulWidget {
   const Screen6({Key? key}) : super(key: key);
@@ -31,10 +30,13 @@ class _Screen6State extends State<Screen6> {
   bool isLoading = true;
   TextEditingController response1Controller = TextEditingController();
   TextEditingController response2Controller = TextEditingController();
-  SharedPreferences? _sharedPreferences;
+
+  late FirebaseAuthService authService;
+
   @override
   void initState() {
     super.initState();
+    authService = context.read<FirebaseAuthService>();
     initializeData(context);
   }
 
@@ -234,8 +236,7 @@ class _Screen6State extends State<Screen6> {
   }
 
   void initializeData(BuildContext context) async {
-    _sharedPreferences = await SharedPreferences.getInstance();
-    userId = _sharedPreferences!.getString(Constants.USER_ID)!;
+    userId = authService.user!.uid;
     ref = FirebaseDatabase.instance.ref('forms/$userId/1/section_b');
     await ref!.child(screenName).child("question_8").update({
       "question": SectionB.SECTION_B_QUESTION_8,

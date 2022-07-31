@@ -1,12 +1,11 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:ifri/constants/constants.dart';
 import 'package:ifri/constants/section_c.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/section_c/screen13.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ifri/ui/section_c/screen17.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:provider/provider.dart';
 
 class Screen16 extends StatefulWidget {
   const Screen16({Key? key}) : super(key: key);
@@ -21,18 +20,20 @@ class _Screen16State extends State<Screen16> {
   TextEditingController question26Controller = TextEditingController();
   TextEditingController question17Controller = TextEditingController();
   String screenName = "screen_16";
-  SharedPreferences? _sharedPreferences;
+  late FirebaseAuthService authService;
+
   String? userId;
 
   @override
   void initState() {
     super.initState();
+    authService = context.read<FirebaseAuthService>();
     initialize();
   }
 
   void initialize() async {
-    _sharedPreferences = await SharedPreferences.getInstance();
-    userId = _sharedPreferences!.getString(Constants.USER_ID);
+    userId = authService.user!.uid;
+
     ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_c');
     setData();
   }

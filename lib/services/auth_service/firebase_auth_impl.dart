@@ -3,7 +3,8 @@ import 'package:logger/logger.dart';
 
 class FirebaseAuthService {
   Logger logger = Logger();
-  User? user;
+  User? get user => FirebaseAuth.instance.currentUser;
+
   Stream<User?> get authStream => FirebaseAuth.instance.userChanges();
 
   Future<UserCredential?> registerWithEmailAndPassword(
@@ -18,6 +19,7 @@ class FirebaseAuthService {
       );
       return credential;
     } on Exception catch (e) {
+      logger.e(e);
       rethrow;
     }
   }
@@ -29,7 +31,6 @@ class FirebaseAuthService {
         email: email,
         password: password,
       );
-      user = credential.user;
       return credential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

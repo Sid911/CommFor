@@ -3,11 +3,10 @@ import 'package:ifri/constants/section_c.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/section_b/screen3.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ifri/constants/constants.dart';
 import 'package:ifri/ui/section_c/screen20.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:provider/provider.dart';
 
 class Screen19 extends StatefulWidget {
   const Screen19({Key? key}) : super(key: key);
@@ -21,17 +20,21 @@ class _Screen19State extends State<Screen19> {
   String screenName = "screen_19";
   String _response3 = "", _response4 = "", _response5 = "";
   bool isLoading = true;
-  SharedPreferences? _sharedPreferences;
+
   String? userId;
+
+  late FirebaseAuthService authService;
+
   @override
   void initState() {
     super.initState();
+    authService = context.read<FirebaseAuthService>();
+
     initialize();
   }
 
   void initialize() async {
-    _sharedPreferences = await SharedPreferences.getInstance();
-    userId = _sharedPreferences!.getString(Constants.USER_ID);
+    userId = authService.user!.uid;
     ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_c');
     setData();
   }

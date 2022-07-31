@@ -5,8 +5,8 @@ import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/section_b/screen6.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ifri/constants/constants.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:provider/provider.dart';
 
 class Screen5 extends StatefulWidget {
   const Screen5({Key? key}) : super(key: key);
@@ -20,18 +20,20 @@ class _Screen5State extends State<Screen5> {
   String screenName = "screen_5";
   String _response = "";
   bool isLoading = true;
-  SharedPreferences? _sharedPreferences;
   String? userId;
+  late FirebaseAuthService authService;
 
   @override
   void initState() {
     super.initState();
+    authService = context.read<FirebaseAuthService>();
+
     initialize();
   }
 
   void initialize() async {
-    _sharedPreferences = await SharedPreferences.getInstance();
-    userId = _sharedPreferences!.getString(Constants.USER_ID);
+    userId = authService.user!.uid;
+
     ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_b');
     setData();
   }

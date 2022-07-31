@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
-import 'package:ifri/ui/section_b/screen1.dart';
+import 'package:ifri/ui/capture/capture_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,14 +64,17 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (ctx) => Screen1()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => const CapturePage()),
+                      );
                     },
                     child: Container(
                       width: size.width - 40,
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Color(0xFF12160F),
+                        color: const Color(0xFF12160F),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(
@@ -101,10 +104,10 @@ class _HomePageState extends State<HomePage> {
                   child: InkWell(
                     onTap: () {},
                     child: Container(
-                      width: size.width - 40,
-                      padding: EdgeInsets.all(20),
+                      width: (size.width - 40).abs(),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Color(0xFF505921),
+                        color: const Color(0xFF505921),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(
@@ -129,15 +132,26 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    "Coming Soon!",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontFamily: "HelveticaNeue",
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: InkWell(
                     onTap: () {},
                     child: Container(
                       width: size.width - 40,
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Color(0xFF7D893B),
+                        color: const Color(0xFF7D893B).withOpacity(0.6),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(

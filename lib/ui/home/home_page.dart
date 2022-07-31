@@ -33,159 +33,161 @@ class _HomePageState extends State<HomePage> {
           width: size.width,
           fit: BoxFit.cover,
         ),
-        Container(
-          margin: const EdgeInsets.only(left: 20),
-          child: Scaffold(
-            appBar: AppBar(
-              automaticallyImplyLeading: false,
-              title: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  child: const Text("For ManGoES"),
+        SafeArea(
+          child: Container(
+            margin: const EdgeInsets.only(left: 20),
+            child: Scaffold(
+              appBar: AppBar(
+                automaticallyImplyLeading: false,
+                title: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: const Text("For ManGoES"),
+                  ),
                 ),
+                backgroundColor: Colors.transparent,
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      authService.logout();
+                    },
+                    icon: const Icon(
+                      Icons.logout,
+                    ),
+                  )
+                ],
               ),
               backgroundColor: Colors.transparent,
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    authService.logout();
-                  },
-                  icon: const Icon(
-                    Icons.logout,
-                  ),
-                )
-              ],
-            ),
-            backgroundColor: Colors.transparent,
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (ctx) => const CapturePage()),
-                      );
-                    },
-                    child: Container(
-                      width: (size.width - 40).abs(),
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF12160F),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Icon(
-                            FlutterRemix.camera_2_line,
-                            color: Colors.white,
-                            size: 60,
-                          ),
-                          Text(
-                            "Capture",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontFamily: "HelveticaNeue",
-                              fontWeight: FontWeight.w200,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (ctx) => const VisualisePage(),
+              body: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const CapturePage()),
+                        );
+                      },
+                      child: Container(
+                        width: (size.width - 40).abs(),
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF12160F),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                      );
-                    },
-                    child: Container(
-                      width: (size.width - 40).abs(),
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF505921),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Icon(
-                            FlutterRemix.line_chart_line,
-                            color: Colors.white,
-                            size: 60,
-                          ),
-                          Text(
-                            "Visualise",
-                            style: TextStyle(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: const [
+                            Icon(
+                              FlutterRemix.camera_2_line,
                               color: Colors.white,
-                              fontSize: 20,
-                              fontFamily: "HelveticaNeue",
-                              fontWeight: FontWeight.w200,
+                              size: 60,
                             ),
-                          ),
-                        ],
+                            Text(
+                              "Capture",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "HelveticaNeue",
+                                fontWeight: FontWeight.w200,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    "Coming Soon!",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontFamily: "HelveticaNeue",
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: size.width - 40,
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF7D893B).withOpacity(0.6),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Icon(
-                            FlutterRemix.discuss_line,
-                            color: Colors.white,
-                            size: 60,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (ctx) => const VisualisePage(),
                           ),
-                          Text(
-                            "Discuss",
-                            style: TextStyle(
+                        );
+                      },
+                      child: Container(
+                        width: (size.width - 40).abs(),
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF505921),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: const [
+                            Icon(
+                              FlutterRemix.line_chart_line,
                               color: Colors.white,
-                              fontSize: 20,
-                              fontFamily: "HelveticaNeue",
-                              fontWeight: FontWeight.w200,
+                              size: 60,
                             ),
-                          ),
-                        ],
+                            Text(
+                              "Visualise",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "HelveticaNeue",
+                                fontWeight: FontWeight.w200,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Text(
+                      "Coming Soon!",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: "HelveticaNeue",
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: size.width - 40,
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF7D893B).withOpacity(0.6),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: const [
+                            Icon(
+                              FlutterRemix.discuss_line,
+                              color: Colors.white,
+                              size: 60,
+                            ),
+                            Text(
+                              "Discuss",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "HelveticaNeue",
+                                fontWeight: FontWeight.w200,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

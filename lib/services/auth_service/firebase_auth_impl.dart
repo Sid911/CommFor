@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:logger/logger.dart';
 
@@ -7,15 +8,31 @@ class FirebaseAuthService {
 
   Stream<User?> get authStream => FirebaseAuth.instance.userChanges();
 
-  Future<UserCredential?> registerWithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
+  Future<UserCredential?> registerWithEmailAndPassword({
+    required String email,
+    required String password,
+    required String org,
+    required String username,
+  }) async {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
+      );
+      final db = FirebaseFirestore.instance;
+      db.collection("users").doc(credential.user!.uid).set(
+        {
+          "username": username,
+          "organisation": org,
+        },
+        SetOptions(merge: true),
+      ).onError(
+        (error, stackTrace) => logger.e(
+          "Error settings the account Details",
+          error,
+          stackTrace,
+        ),
       );
       return credential;
     } on Exception catch (e) {

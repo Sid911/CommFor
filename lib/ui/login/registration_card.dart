@@ -137,8 +137,10 @@ class _RegistrationCardState extends State<RegistrationCard> {
               MaterialButton(
                 onPressed: () async {
                   final res = await authService.registerWithEmailAndPassword(
-                    emailController.text.trim(),
-                    passwordController.text.trim(),
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                    org: orgNameController.text.trim(),
+                    username: usernameController.text.trim(),
                   );
                   // handle errors better as we need to check for weak password etc.
                   if (res == null) {

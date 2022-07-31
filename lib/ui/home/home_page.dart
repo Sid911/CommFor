@@ -1,15 +1,17 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_remix/flutter_remix.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/ui/capture/capture_page.dart';
+import 'package:ifri/ui/visualise/visualise_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -32,7 +34,7 @@ class _HomePageState extends State<HomePage> {
           fit: BoxFit.cover,
         ),
         Container(
-          margin: EdgeInsets.only(left: 20),
+          margin: const EdgeInsets.only(left: 20),
           child: Scaffold(
             appBar: AppBar(
               automaticallyImplyLeading: false,
@@ -81,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
                           Icon(
-                            Icons.camera_roll_outlined,
+                            FlutterRemix.camera_2_line,
                             color: Colors.white,
                             size: 60,
                           ),
@@ -102,7 +104,14 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (ctx) => const VisualisePage(),
+                        ),
+                      );
+                    },
                     child: Container(
                       width: (size.width - 40).abs(),
                       padding: const EdgeInsets.all(20),
@@ -114,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
                           Icon(
-                            Icons.data_exploration_outlined,
+                            FlutterRemix.line_chart_line,
                             color: Colors.white,
                             size: 60,
                           ),
@@ -158,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
                           Icon(
-                            Icons.chat_outlined,
+                            FlutterRemix.discuss_line,
                             color: Colors.white,
                             size: 60,
                           ),

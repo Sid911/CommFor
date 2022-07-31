@@ -39,14 +39,28 @@ class SectionD {
       "58. Are penalties imposed on users if they break rules?";
   static const String SECTION_D_QUESTION_59 =
       "59. How may many people have been penalized for rule infringement in the last one year?";
+
   static const String SECTION_D_QUESTION_60 =
       "60. What penalties are imposed on users if they break a rule the first time, second time and many times?";
+  static const String SECTION_D_QUESTION_60_PROPERTY_1 = "First time";
+  static const String SECTION_D_QUESTION_60_PROPERTY_2 = "Second time";
+  static const String SECTION_D_QUESTION_60_PROPERTY_3 = "Many time";
+  static const String SECTION_D_QUESTION_60_POINT_1 =
+      "Verbal chastisement/ public sanctions";
+  static const String SECTION_D_QUESTION_60_POINT_2 =
+      "In-kind/ restrictions/seize products ";
+  static const String SECTION_D_QUESTION_60_POINT_3 = "Fines – Cash";
+  static const String SECTION_D_QUESTION_60_POINT_4 =
+      "Physical-corporeal punishment or imprisonment";
+
   static const String SECTION_D_QUESTION_61 =
       "61. If penalties are imposed, what is the level of rule compliance by the users?";
   static const String SECTION_D_QUESTION_62 =
       "62. What activities have been undertaken in this forest as part of management? (and by whom)";
+
   static const String SECTION_D_QUESTION_63 =
       "63. How are community members involved in the following governance activities";
+
   static const String SECTION_D_QUESTION_64_A =
       "64(a). What is the number of members in the management institution?";
   static const String SECTION_D_QUESTION_64_B =

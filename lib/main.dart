@@ -32,6 +32,7 @@ class _MyAppState extends State<MyApp> {
   static final baseDioOptions = BaseOptions(
     baseUrl: "https://commfor-api-2ihfjenfvq-em.a.run.app/api",
     receiveTimeout: 60000,
+    sendTimeout: 15000,
     queryParameters: {
       "key": "d62eed08684123e262e95b5abc95f97c3866b514c75a591b8b9a77bc72ee3b92"
     },

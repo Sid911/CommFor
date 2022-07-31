@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                     child: Container(
-                      width: size.width - 40,
+                      width: (size.width - 40).abs(),
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: const Color(0xFF12160F),

@@ -1,18 +1,16 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ifri/constants/constants.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/login/login_wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:ifri/ui/section_b/screen1.dart';
 import 'package:ifri/ui/section_b/screen6.dart';
 import 'package:ifri/ui/section_b/screen7.dart';
 import 'package:ifri/ui/section_b/screen8.dart';
 import 'package:ifri/ui/section_b/screen9.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
-
-SharedPreferences? _sharedPreferences;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,15 +29,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  static final baseDioOptions = BaseOptions(
+    baseUrl: "https://commfor-api-2ihfjenfvq-em.a.run.app/api",
+    receiveTimeout: 60000,
+    queryParameters: {
+      "key": "d62eed08684123e262e95b5abc95f97c3866b514c75a591b8b9a77bc72ee3b92"
+    },
+  );
+  final dio = Dio(baseDioOptions);
   @override
   void initState() {
     super.initState();
-    initialize();
-  }
-
-  void initialize() async {
-    _sharedPreferences = await SharedPreferences.getInstance();
-    _sharedPreferences?.setString(Constants.USER_ID, "3");
+    if (kDebugMode) {
+      dio.interceptors.add(LogInterceptor(responseBody: true));
+    } else {
+      dio.interceptors.add(LogInterceptor(responseBody: false));
+    }
   }
 
   @override
@@ -47,6 +52,7 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         Provider<FirebaseAuthService>(create: (_) => FirebaseAuthService()),
+        Provider<Dio>(create: (_) => dio),
       ],
       child: MaterialApp(
         title: 'IFRI',
@@ -55,7 +61,7 @@ class _MyAppState extends State<MyApp> {
         initialRoute: '/login',
         routes: {
           '/': (BuildContext ctx) {
-            return const Screen1();
+            return const HomePage();
           },
           '/login': (BuildContext ctx) {
             return const LoginWrapper();

@@ -40,127 +40,128 @@ class _Screen26State extends State<Screen26> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      body: ColoredBox(
-        color: const Color(0xFF12160F),
-        child: Padding(
-          padding: const EdgeInsets.only(
-              left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: () => {},
-                    child: Image.asset(
-                      'assets/icons/ic_back.png',
-                      fit: BoxFit.cover,
-                      width: 20,
-                      height: 20,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
-                    child: const Text(
-                      SectionC.SECTION_C_SECTION_11,
-                      style: CustomStyle.screenTitle,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () => {},
-                    child: Image.asset(
-                      'assets/icons/ic_close.png',
-                      fit: BoxFit.cover,
-                      width: 30,
-                      height: 30,
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const SizedBox(
-                    height: 20,
-                    width: 300,
-                    child: Divider(color: Color(0xffD1D0BD))),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: 10.0, right: 10.0, top: 25.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      child: Scaffold(
+        body: ColoredBox(
+          color: const Color(0xFF12160F),
+          child: Padding(
+            padding: const EdgeInsets.only(
+                left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(SectionC.SECTION_C_QUESTION_49,
-                        style: CustomStyle.questionTitle),
-                    const SizedBox(
-                      height: 20,
+                    InkWell(
+                      onTap: () => {},
+                      child: Image.asset(
+                        'assets/icons/ic_back.png',
+                        fit: BoxFit.cover,
+                        width: 20,
+                        height: 20,
+                      ),
                     ),
-                    const Text("(1) Local (year)",
-                        style: CustomStyle.questionTitle),
-                    const SizedBox(
-                      height: 20,
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: const Text(
+                        SectionC.SECTION_C_SECTION_11,
+                        style: CustomStyle.screenTitle,
+                      ),
                     ),
-                    TextField(
-                        controller: question49aController,
-                        style: CustomStyle.answer,
-                        textAlign: TextAlign.start,
-                        decoration: CustomStyle.answerInputDecoration),
-                    const SizedBox(
-                      height: 20,
+                    InkWell(
+                      onTap: () => {},
+                      child: Image.asset(
+                        'assets/icons/ic_close.png',
+                        fit: BoxFit.cover,
+                        width: 30,
+                        height: 30,
+                      ),
                     ),
-                    const Text("(2) Regional (year)",
-                        style: CustomStyle.questionTitle),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextField(
-                        controller: question49bController,
-                        style: CustomStyle.answer,
-                        textAlign: TextAlign.start,
-                        decoration: CustomStyle.answerInputDecoration),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text("(3) National (year)",
-                        style: CustomStyle.questionTitle),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextField(
-                        controller: question49cController,
-                        style: CustomStyle.answer,
-                        textAlign: TextAlign.start,
-                        decoration: CustomStyle.answerInputDecoration),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                      onTap: () => syncData(context),
-                      splashColor: Colors.lightBlue,
-                      borderRadius: BorderRadius.circular(2),
-                      child: CustomButton.nextButton),
-                ],
-              ),
-              const SizedBox(
-                height: 100,
-              ),
-            ],
+                Container(
+                  alignment: Alignment.center,
+                  child: const SizedBox(
+                      height: 20,
+                      width: 300,
+                      child: Divider(color: Color(0xffD1D0BD))),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 10.0, right: 10.0, top: 25.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(SectionC.SECTION_C_QUESTION_49,
+                          style: CustomStyle.questionTitle),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text("(1) Local (year)",
+                          style: CustomStyle.questionTitle),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                          controller: question49aController,
+                          style: CustomStyle.answer,
+                          textAlign: TextAlign.start,
+                          decoration: CustomStyle.answerInputDecoration),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text("(2) Regional (year)",
+                          style: CustomStyle.questionTitle),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                          controller: question49bController,
+                          style: CustomStyle.answer,
+                          textAlign: TextAlign.start,
+                          decoration: CustomStyle.answerInputDecoration),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text("(3) National (year)",
+                          style: CustomStyle.questionTitle),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                          controller: question49cController,
+                          style: CustomStyle.answer,
+                          textAlign: TextAlign.start,
+                          decoration: CustomStyle.answerInputDecoration),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    InkWell(
+                        onTap: () => syncData(context),
+                        splashColor: Colors.lightBlue,
+                        borderRadius: BorderRadius.circular(2),
+                        child: CustomButton.nextButton),
+                  ],
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+              ],
+            ),
           ),
         ),
       ),
-    ));
+    );
   }
 
   void setData() async {

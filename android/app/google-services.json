@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "191546066082",
+    "firebase_url": "https://commfor-backend-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "commfor-backend",
     "storage_bucket": "commfor-backend.appspot.com"
   },

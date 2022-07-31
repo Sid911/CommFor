@@ -3,11 +3,10 @@ import 'package:ifri/constants/section_c.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/section_b/screen11.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ifri/constants/constants.dart';
 import 'package:ifri/ui/section_c/screen21.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:provider/provider.dart';
 
 class Screen20 extends StatefulWidget {
   const Screen20({Key? key}) : super(key: key);
@@ -21,18 +20,20 @@ class _Screen20State extends State<Screen20> {
   String screenName = "screen_20";
   bool isLoading = true;
   Map<int, String> response = {};
-  SharedPreferences? _sharedPreferences;
+  late FirebaseAuthService authService;
+
   String? userId;
 
   @override
   void initState() {
     super.initState();
+    authService = context.read<FirebaseAuthService>();
     initialize();
   }
 
   void initialize() async {
-    _sharedPreferences = await SharedPreferences.getInstance();
-    userId = _sharedPreferences!.getString(Constants.USER_ID);
+    userId = authService.user!.uid;
+
     ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_c');
     setData();
   }
@@ -47,219 +48,220 @@ class _Screen20State extends State<Screen20> {
       return Container();
     } else {
       return SafeArea(
-          child: Scaffold(
-        body: SingleChildScrollView(
-          child: ColoredBox(
-            color: const Color(0xFF12160F),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () => {navigateToPreviousScreen(context)},
-                        child: Image.asset(
-                          'assets/icons/ic_back.png',
-                          fit: BoxFit.cover,
-                          width: 20,
-                          height: 20,
+        child: Scaffold(
+          body: SingleChildScrollView(
+            child: ColoredBox(
+              color: const Color(0xFF12160F),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () => {navigateToPreviousScreen(context)},
+                          child: Image.asset(
+                            'assets/icons/ic_back.png',
+                            fit: BoxFit.cover,
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: const Text(
-                          SectionC.SECTION_C_SECTION_6,
-                          style: CustomStyle.screenTitle,
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            SectionC.SECTION_C_SECTION_6,
+                            style: CustomStyle.screenTitle,
+                          ),
                         ),
-                      ),
-                      InkWell(
-                        onTap: () => {},
-                        child: Image.asset(
-                          'assets/icons/ic_close.png',
-                          fit: BoxFit.cover,
-                          width: 30,
-                          height: 30,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    child: const SizedBox(
-                        height: 20,
-                        width: 300,
-                        child: Divider(color: Color(0xffD1D0BD))),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 10.0, right: 10.0, top: 25.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(SectionC.SECTION_C_QUESTION_39,
-                            style: CustomStyle.questionTitle),
-                        SizedBox(
-                          height: 20,
+                        InkWell(
+                          onTap: () => {},
+                          child: Image.asset(
+                            'assets/icons/ic_close.png',
+                            fit: BoxFit.cover,
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: SizedBox(
-                      height: 600,
-                      child: Row(children: [
-                        Column(
-                          children: [
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 60,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_1,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    1, response[1], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 75,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_2,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    2, response[2], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 60,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_3,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    3, response[3], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 75,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_4,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    4, response[4], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 75,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_5,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    5, response[5], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 60,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_6,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    6, response[6], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 60,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_7,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    7, response[7], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 75,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_8,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    8, response[8], setResponse),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 200,
-                                  height: 30,
-                                  child: Text(
-                                      SectionC.SECTION_C_QUESTION_39_OPTION_9,
-                                      style: CustomStyle.answer),
-                                ),
-                                CustomOption.yesNoButtons(
-                                    9, response[9], setResponse),
-                              ],
-                            ),
-                          ],
-                        )
-                      ]),
+                    Container(
+                      alignment: Alignment.center,
+                      child: const SizedBox(
+                          height: 20,
+                          width: 300,
+                          child: Divider(color: Color(0xffD1D0BD))),
                     ),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                          onTap: () => syncData(context),
-                          splashColor: Colors.lightBlue,
-                          borderRadius: BorderRadius.circular(2),
-                          child: CustomButton.nextButton),
-                    ],
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 10.0, right: 10.0, top: 25.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(SectionC.SECTION_C_QUESTION_39,
+                              style: CustomStyle.questionTitle),
+                          SizedBox(
+                            height: 20,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: SizedBox(
+                        height: 600,
+                        child: Row(children: [
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 60,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_1,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      1, response[1], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 75,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_2,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      2, response[2], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 60,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_3,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      3, response[3], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 75,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_4,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      4, response[4], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 75,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_5,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      5, response[5], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 60,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_6,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      6, response[6], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 60,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_7,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      7, response[7], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 75,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_8,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      8, response[8], setResponse),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 200,
+                                    height: 30,
+                                    child: Text(
+                                        SectionC.SECTION_C_QUESTION_39_OPTION_9,
+                                        style: CustomStyle.answer),
+                                  ),
+                                  CustomOption.yesNoButtons(
+                                      9, response[9], setResponse),
+                                ],
+                              ),
+                            ],
+                          )
+                        ]),
+                      ),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                            onTap: () => syncData(context),
+                            splashColor: Colors.lightBlue,
+                            borderRadius: BorderRadius.circular(2),
+                            child: CustomButton.nextButton),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ));
+      );
     }
   }
 

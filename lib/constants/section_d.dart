@@ -2,6 +2,7 @@ class SectionD {
   static const String SECTION_D_SECTION_1 = "D1. General";
   static const String SECTION_D_SECTION_2 = "D2. Rules";
   static const String SECTION_D_SECTION_3 = "D3. Activities";
+  static const String SECTION_D_SECTION_4 = "D4. Participation";
   static const String SECTION_D_QUESTION_54 =
       "54. What is the nature of forest management?";
 
@@ -44,7 +45,7 @@ class SectionD {
       "60. What penalties are imposed on users if they break a rule the first time, second time and many times?";
   static const String SECTION_D_QUESTION_60_PROPERTY_1 = "First time";
   static const String SECTION_D_QUESTION_60_PROPERTY_2 = "Second time";
-  static const String SECTION_D_QUESTION_60_PROPERTY_3 = "Many time";
+  static const String SECTION_D_QUESTION_60_PROPERTY_3 = "Many times";
   static const String SECTION_D_QUESTION_60_POINT_1 =
       "Verbal chastisement/ public sanctions";
   static const String SECTION_D_QUESTION_60_POINT_2 =
@@ -57,9 +58,41 @@ class SectionD {
       "61. If penalties are imposed, what is the level of rule compliance by the users?";
   static const String SECTION_D_QUESTION_62 =
       "62. What activities have been undertaken in this forest as part of management? (and by whom)";
+  static const String SECTION_D_QUESTION_62_PROPERTY_1 = "Community";
+  static const String SECTION_D_QUESTION_62_PROPERTY_2 = "Government";
+  static const String SECTION_D_QUESTION_62_PROPERTY_3 = "NGO";
+  static const String SECTION_D_QUESTION_62_PROPERTY_4 = "Private";
+  static const String SECTION_D_QUESTION_62_PROPERTY_5 =
+      "Women's Participation";
+  static const String SECTION_D_QUESTION_62_POINT_1 =
+      "Improvement: Planting seeds or seedlings (including nursery), thinning, pruning,  ";
+  static const String SECTION_D_QUESTION_62_POINT_2 =
+      "Protection: Fire management, fencing, trenches";
+  static const String SECTION_D_QUESTION_62_POINT_3 =
+      "Monitoring: Patrolling, rule enforcement";
+  static const String SECTION_D_QUESTION_62_POINT_4 = "Harvesting: collective";
+  static const String SECTION_D_QUESTION_62_POINT_5 = "Sale: collective";
 
   static const String SECTION_D_QUESTION_63 =
       "63. How are community members involved in the following governance activities";
+
+  static const String SECTION_D_QUESTION_63_PROPERTY_1 =
+      "Almost all members participate";
+  static const String SECTION_D_QUESTION_63_PROPERTY_2 =
+      "More than half participate";
+  static const String SECTION_D_QUESTION_63_PROPERTY_3 =
+      "About one-third participate";
+  static const String SECTION_D_QUESTION_63_PROPERTY_4 =
+      "Very few participate ";
+
+  static const String SECTION_D_QUESTION_63_POINT_1 =
+      "Making/amending access rules";
+  static const String SECTION_D_QUESTION_63_POINT_2 =
+      "Making/amending management plans";
+  static const String SECTION_D_QUESTION_63_POINT_3 =
+      "Electing members to executive positions";
+  static const String SECTION_D_QUESTION_63_POINT_4 =
+      "Volunteer to participate in management activities (patrolling, plantation, etc.)";
 
   static const String SECTION_D_QUESTION_64_A =
       "64(a). What is the number of members in the management institution?";

@@ -146,7 +146,7 @@ class _Screen31State extends State<Screen31> {
                                       CustomStyle.answerInputDecoration),
                               space,
                               space,
-                              // Question 66 : Table entry
+                              // Question 60 : Table entry
                               const Text(
                                 SectionD.SECTION_D_QUESTION_60,
                                 style: CustomStyle.questionTitle,

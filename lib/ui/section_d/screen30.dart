@@ -119,54 +119,58 @@ class _Screen30State extends State<Screen30> {
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
                             child: SizedBox(
-                              child: Row(children: [
-                                Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 200,
-                                          height: 60,
-                                          child: Text(
-                                              SectionD
-                                                  .SECTION_D_QUESTION_57_OPTION_1,
-                                              style: CustomStyle.answer),
-                                        ),
-                                        CustomOption.yesNoButtons(
-                                            1, response57[1], setResponse),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 200,
-                                          height: 75,
-                                          child: Text(
-                                              SectionD
-                                                  .SECTION_D_QUESTION_57_OPTION_2,
-                                              style: CustomStyle.answer),
-                                        ),
-                                        CustomOption.yesNoButtons(
-                                            2, response57[2], setResponse),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 200,
-                                          height: 60,
-                                          child: Text(
-                                              SectionD
-                                                  .SECTION_D_QUESTION_57_OPTION_3,
-                                              style: CustomStyle.answer),
-                                        ),
-                                        CustomOption.yesNoButtons(
-                                            3, response57[3], setResponse),
-                                      ],
-                                    ),
-                                  ],
-                                )
-                              ]),
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                physics: const BouncingScrollPhysics(),
+                                child: Row(children: [
+                                  Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          const SizedBox(
+                                            width: 200,
+                                            height: 60,
+                                            child: Text(
+                                                SectionD
+                                                    .SECTION_D_QUESTION_57_OPTION_1,
+                                                style: CustomStyle.answer),
+                                          ),
+                                          CustomOption.yesNoButtons(
+                                              1, response57[1], setResponse),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const SizedBox(
+                                            width: 200,
+                                            height: 75,
+                                            child: Text(
+                                                SectionD
+                                                    .SECTION_D_QUESTION_57_OPTION_2,
+                                                style: CustomStyle.answer),
+                                          ),
+                                          CustomOption.yesNoButtons(
+                                              2, response57[2], setResponse),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const SizedBox(
+                                            width: 200,
+                                            height: 60,
+                                            child: Text(
+                                                SectionD
+                                                    .SECTION_D_QUESTION_57_OPTION_3,
+                                                style: CustomStyle.answer),
+                                          ),
+                                          CustomOption.yesNoButtons(
+                                              3, response57[3], setResponse),
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                ]),
+                              ),
                             ),
                           ),
                           const SizedBox(
@@ -238,7 +242,7 @@ class _Screen30State extends State<Screen30> {
       if (snapshot.exists) {
         Map<dynamic, dynamic> values = snapshot.value as Map<dynamic, dynamic>;
         values.forEach((key, value) {
-          print(key);
+          // print(key);
           int p = -1;
           if (SectionD.SECTION_D_QUESTION_57_OPTION_1 == key) {
             p = 1;

@@ -24,6 +24,7 @@ class _RegistrationCardState extends State<RegistrationCard> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController orgNameController = TextEditingController();
+  TextEditingController contNameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +122,7 @@ class _RegistrationCardState extends State<RegistrationCard> {
                 ),
                 child: TextField(
                   controller: orgNameController,
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.name,
                   style: const TextStyle(
                     color: Color(0xFFD1D0BD),
                     fontFamily: 'HelveticaNeue',
@@ -134,6 +135,29 @@ class _RegistrationCardState extends State<RegistrationCard> {
                   ),
                 ),
               ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: TextField(
+                  controller: contNameController,
+                  keyboardType: TextInputType.name,
+                  style: const TextStyle(
+                    color: Color(0xFFD1D0BD),
+                    fontFamily: 'HelveticaNeue',
+                  ),
+                  cursorColor: const Color(0xFFD1D0BD),
+                  decoration: const InputDecoration(
+                    labelText: 'Country',
+                    labelStyle: TextStyle(color: Color(0xFFD1D0BD)),
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
               MaterialButton(
                 onPressed: () async {
                   final res = await authService.registerWithEmailAndPassword(
@@ -141,6 +165,7 @@ class _RegistrationCardState extends State<RegistrationCard> {
                     password: passwordController.text.trim(),
                     org: orgNameController.text.trim(),
                     username: usernameController.text.trim(),
+                    country: contNameController.text.trim(),
                   );
                   // handle errors better as we need to check for weak password etc.
                   if (res == null) {

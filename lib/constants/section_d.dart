@@ -27,6 +27,26 @@ class SectionD {
 
   static const String SECTION_D_QUESTION_56 =
       "56. Are there formal rules to manage this forest? Who defines the rules? Are they well-defined?";
+  static const String SECTION_D_QUESTION_56_POINT_1 =
+      "(a). What forest products can be harvested?";
+  static const String SECTION_D_QUESTION_56_POINT_2 =
+      "(b). When can forest products be harvested?";
+  static const String SECTION_D_QUESTION_56_POINT_3 =
+      "(c). How much of a forest product can be harvested?";
+  static const String SECTION_D_QUESTION_56_POINT_4 =
+      "(d). Who can harvest forest products?";
+  static const String SECTION_D_QUESTION_56_POINT_5 =
+      "(e). Where can forest products be harvested?";
+  static const String SECTION_D_QUESTION_56_POINT_6 = "56 (f). Others";
+  static const String SECTION_D_QUESTION_56_OPTION_1 = "Government Agency";
+  static const String SECTION_D_QUESTION_56_OPTION_2 =
+      "Formal Community Institution";
+  static const String SECTION_D_QUESTION_56_OPTION_3 =
+      "Informal Community Institution";
+  static const String SECTION_D_QUESTION_56_OPTION_4 = "Private Organization";
+  static const String SECTION_D_QUESTION_56_OPTION_5 =
+      "Non-government Organization";
+  static const String SECTION_D_QUESTION_56_OPTION_6 = "Religious Institution";
   static const String SECTION_D_QUESTION_57 =
       "57. Do rules restrict any of following?";
   static const String SECTION_D_QUESTION_57_OPTION_1 =

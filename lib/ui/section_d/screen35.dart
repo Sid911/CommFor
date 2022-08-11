@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_d.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
-import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/section_d/screen36.dart';
 import 'package:provider/provider.dart';
 
-// Q 64 65
+// Q 66 67
 class Screen35 extends StatefulWidget {
   const Screen35({Key? key}) : super(key: key);
 
@@ -20,12 +19,23 @@ class _Screen35State extends State<Screen35> {
   DatabaseReference? ref;
   String screenName = "screen_35";
   bool isLoading = true;
-  String response64B = '';
-  String response65 = '';
-  String response66 = '';
-  String response67 = '';
-  TextEditingController question64Controller1 = TextEditingController();
-  TextEditingController question64Controller2 = TextEditingController();
+
+  TextEditingController question63Controller1 = TextEditingController();
+  TextEditingController question63Controller2 = TextEditingController();
+  TextEditingController question63Controller3 = TextEditingController();
+  TextEditingController question63Controller4 = TextEditingController();
+  TextEditingController question63Controller5 = TextEditingController();
+  TextEditingController question63Controller6 = TextEditingController();
+  TextEditingController question63Controller7 = TextEditingController();
+  TextEditingController question63Controller8 = TextEditingController();
+  TextEditingController question63Controller9 = TextEditingController();
+  TextEditingController question63Controller10 = TextEditingController();
+  TextEditingController question63Controller11 = TextEditingController();
+  TextEditingController question63Controller12 = TextEditingController();
+  TextEditingController question63Controller13 = TextEditingController();
+  TextEditingController question63Controller14 = TextEditingController();
+  TextEditingController question63Controller15 = TextEditingController();
+  TextEditingController question63Controller16 = TextEditingController();
 
   String? userId;
 
@@ -105,96 +115,213 @@ class _Screen35State extends State<Screen35> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(SectionD.SECTION_D_QUESTION_64_A,
-                                  style: CustomStyle.questionTitle),
+                              const Text(
+                                SectionD.SECTION_D_QUESTION_63,
+                                style: CustomStyle.questionTitle,
+                              ),
                               space,
-                              const Text("Men",
+                              // 1st Row
+                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_1,
                                   style: CustomStyle.questionBoldTitle),
                               space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
                               TextField(
-                                  controller: question64Controller1,
+                                  controller: question63Controller1,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
-                              const Text("Women",
-                                  style: CustomStyle.questionBoldTitle),
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question64Controller2,
+                                  controller: question63Controller2,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller3,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                SectionD.SECTION_D_QUESTION_64_B,
-                                style: CustomStyle.questionTitle,
-                              ),
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  style: CustomStyle.optionYesNo),
                               space,
-                              CustomOption.optionRadioButtons(
-                                ['Male', 'Female'],
-                                false,
-                                'Male',
-                                setResponse64b,
-                              ),
+                              TextField(
+                                  controller: question63Controller4,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
                               space,
-                              space,
-                              const Text(
-                                SectionD.SECTION_D_QUESTION_65,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              space,
-                              CustomOption.optionRadioButtons(
-                                ['Yes', 'No'],
-                                false,
-                                'Yes',
-                                setResponse65,
-                              ),
-                              space,
+                              // 1st Row End
+                              // 2nd Row
+                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_2,
+                                  style: CustomStyle.questionBoldTitle),
                               space,
                               const Text(
-                                SectionD.SECTION_D_QUESTION_66,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              CustomOption.optionRadioButtons(
-                                [
-                                  'Once a day',
-                                  'Multiple times in a week',
-                                  'Once a week',
-                                  'Once in two weeks',
-                                  'Once in a month',
-                                  'Once in three months',
-                                  'Once in six months',
-                                  'Once in a year',
-                                  'Never'
-                                ],
-                                true,
-                                'Once a day',
-                                setResponse66,
-                              ),
-                              const Text(
-                                SectionD.SECTION_D_QUESTION_67,
-                                style: CustomStyle.questionTitle,
-                              ),
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
                               space,
-                              CustomOption.optionRadioButtons(
-                                [
-                                  '<10 percent participate',
-                                  '10-30 percent participate',
-                                  '30-50 percent participate',
-                                  '>50 percent participate'
-                                ],
-                                true,
-                                '<10 percent participate',
-                                setResponse67,
-                              ),
+                              TextField(
+                                  controller: question63Controller5,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller6,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller7,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller8,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              //  2nd Row End
+                              // 3rd Row
+                              const Text(
+                                  SectionD
+                                      .SECTION_D_QUESTION_63_POINT_3, // Only these change
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller:
+                                      question63Controller9, // Only these change
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller:
+                                      question63Controller10, // Only these change
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller:
+                                      question63Controller11, // Only these change
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller12,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              // 3rd Row End
+                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_4,
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller13,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller14,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller15,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question63Controller16,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
                             ],
                           ),
                         ),
-                        space,
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -203,7 +330,7 @@ class _Screen35State extends State<Screen35> {
                               onTap: () => syncData(context),
                               splashColor: Colors.lightBlue,
                               borderRadius: BorderRadius.circular(2),
-                              child: CustomButton.submitButton,
+                              child: CustomButton.nextButton,
                             ),
                           ],
                         ),
@@ -219,28 +346,8 @@ class _Screen35State extends State<Screen35> {
     }
   }
 
-  void setResponse64b(String val) {
-    setState(() {
-      response64B = val;
-    });
-  }
-
-  void setResponse65(String val) {
-    setState(() {
-      response65 = val;
-    });
-  }
-
-  void setResponse66(String val) {
-    setState(() {
-      response66 = val;
-    });
-  }
-
-  void setResponse67(String val) {
-    setState(() {
-      response67 = val;
-    });
+  void setResponse(String val) {
+    setState(() {});
   }
 
   navigateToPreviousScreen(BuildContext context) {
@@ -248,24 +355,25 @@ class _Screen35State extends State<Screen35> {
   }
 
   void setData() async {
-    var res = await ref!
-        .child(screenName)
-        .child("question_64_A")
-        .child("response")
-        .get();
-    if (res.exists) {
-      final values = res.value! as Map<dynamic, dynamic>;
-      question64Controller1.text = values["Men"];
-      question64Controller2.text = values["Women"];
-    }
-    res = await ref!
-        .child(screenName)
-        .child('question_64_B')
-        .child("response")
-        .get();
-    if (res.exists) {
-      setResponse64b(res.value! as String);
-    }
+    // Set the data at the starting
+    // var res = await ref!
+    //     .child(screenName)
+    //     .child("question_64_A")
+    //     .child("response")
+    //     .get();
+    // if (res.exists) {
+    //   final values = res.value! as Map<dynamic, dynamic>;
+    //   question64Controller1.text = values["Men"];
+    //   question64Controller2.text = values["Women"];
+    // }
+    // res = await ref!
+    //     .child(screenName)
+    //     .child('question_64_B')
+    //     .child("response")
+    //     .get();
+    // if (res.exists) {
+    //   setResponse(res.value! as String);
+    // }
     setState(() {
       isLoading = false;
     });
@@ -274,17 +382,19 @@ class _Screen35State extends State<Screen35> {
   void syncData(BuildContext context) async {
     await ref!.update({
       screenName: {
-        "question_64_A": {
-          "question": SectionD.SECTION_D_QUESTION_64_A,
-          "response": {
-            "Men": question64Controller1.text.trim(),
-            "Women": question64Controller2.text.trim(),
-          }
-        },
-        "question_64_B": {
-          "question": SectionD.SECTION_D_QUESTION_64_B,
-          "response": response64B
-        }
+        // Set questions that run on submit button
+        //
+        // "question_64_A": {
+        //   "question": SectionD.SECTION_D_QUESTION_64_A,
+        //   "response": {
+        //     "Men": question64Controller1.text.trim(),
+        //     "Women": question64Controller2.text.trim(),
+        //   }
+        // },
+        // "question_64_B": {
+        //   "question": SectionD.SECTION_D_QUESTION_64_B,
+        //   "response": response64B
+        // }
       }
     }).whenComplete(() => navigateToNextScreen(context));
   }

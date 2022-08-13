@@ -5,6 +5,7 @@ import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
+import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/section_d/screen36.dart';
 import 'package:provider/provider.dart';
 
@@ -284,6 +285,18 @@ class _Screen35State extends State<Screen35> {
         "question_64_B": {
           "question": SectionD.SECTION_D_QUESTION_64_B,
           "response": response64B
+        },
+        "question_65": {
+          "question": SectionD.SECTION_D_QUESTION_65,
+          "response": response65
+        },
+        "question_66": {
+          "question": SectionD.SECTION_D_QUESTION_66,
+          "response": response66
+        },
+        "question_67": {
+          "question": SectionD.SECTION_D_QUESTION_67,
+          "response": response67
         }
       }
     }).whenComplete(() => navigateToNextScreen(context));
@@ -293,7 +306,7 @@ class _Screen35State extends State<Screen35> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const Screen36();
+          return const HomePage();
         },
       ),
     );

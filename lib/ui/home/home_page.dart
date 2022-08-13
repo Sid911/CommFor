@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/ui/capture/capture_page.dart';
+import 'package:ifri/ui/discuss/discuss_page.dart';
 import 'package:ifri/ui/visualise/visualise_page.dart';
 import 'package:provider/provider.dart';
 
@@ -70,7 +71,8 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (ctx) => const CapturePage()),
+                            builder: (ctx) => const CapturePage(),
+                          ),
                         );
                       },
                       child: Container(
@@ -156,7 +158,14 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (ctx) => const DiscussPage(),
+                          ),
+                        );
+                      },
                       child: Container(
                         width: size.width - 40,
                         padding: const EdgeInsets.all(20),

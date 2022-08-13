@@ -5,6 +5,7 @@ import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/home/home_page.dart';
+import 'package:ifri/ui/section_d/screen35.dart';
 import 'package:provider/provider.dart';
 
 // Q 66 67
@@ -17,7 +18,7 @@ class Screen34 extends StatefulWidget {
 
 class _Screen34State extends State<Screen34> {
   DatabaseReference? ref;
-  String screenName = "screen_36";
+  String screenName = "screen_34";
   bool isLoading = true;
 
   TextEditingController question63Controller1 = TextEditingController();
@@ -403,7 +404,7 @@ class _Screen34State extends State<Screen34> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const HomePage();
+          return const Screen35();
         },
       ),
     );

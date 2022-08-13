@@ -8,12 +8,12 @@ class FirebaseAuthService {
 
   Stream<User?> get authStream => FirebaseAuth.instance.userChanges();
 
-  Future<UserCredential?> registerWithEmailAndPassword({
-    required String email,
-    required String password,
-    required String org,
-    required String username,
-  }) async {
+  Future<UserCredential?> registerWithEmailAndPassword(
+      {required String email,
+      required String password,
+      required String org,
+      required String username,
+      required String country}) async {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -25,11 +25,12 @@ class FirebaseAuthService {
         {
           "username": username,
           "organisation": org,
+          "country": country,
         },
         SetOptions(merge: true),
       ).onError(
         (error, stackTrace) => logger.e(
-          "Error settings the account Details",
+          "Error settings the account details",
           error,
           stackTrace,
         ),

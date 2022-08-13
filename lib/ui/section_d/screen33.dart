@@ -6,7 +6,6 @@ import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/home/home_page.dart';
-import 'package:ifri/ui/section_d/screen34.dart';
 import 'package:provider/provider.dart';
 
 // Q 66 67
@@ -526,7 +525,7 @@ class _Screen33State extends State<Screen33> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const Screen34();
+          return const HomePage();
         },
       ),
     );

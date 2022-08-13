@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_d.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
+import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/section_d/screen35.dart';
@@ -20,23 +21,32 @@ class _Screen34State extends State<Screen34> {
   DatabaseReference? ref;
   String screenName = "screen_34";
   bool isLoading = true;
+  final String _response62_1 = "";
+  final String _response62_2 = "";
+  final String _response62_3 = "";
+  final String _response62_4 = "";
+  final String _response62_5 = "";
 
-  TextEditingController question63Controller1 = TextEditingController();
-  TextEditingController question63Controller2 = TextEditingController();
-  TextEditingController question63Controller3 = TextEditingController();
-  TextEditingController question63Controller4 = TextEditingController();
-  TextEditingController question63Controller5 = TextEditingController();
-  TextEditingController question63Controller6 = TextEditingController();
-  TextEditingController question63Controller7 = TextEditingController();
-  TextEditingController question63Controller8 = TextEditingController();
-  TextEditingController question63Controller9 = TextEditingController();
-  TextEditingController question63Controller10 = TextEditingController();
-  TextEditingController question63Controller11 = TextEditingController();
-  TextEditingController question63Controller12 = TextEditingController();
-  TextEditingController question63Controller13 = TextEditingController();
-  TextEditingController question63Controller14 = TextEditingController();
-  TextEditingController question63Controller15 = TextEditingController();
-  TextEditingController question63Controller16 = TextEditingController();
+  TextEditingController question62Controller1 = TextEditingController();
+  TextEditingController question62Controller2 = TextEditingController();
+  TextEditingController question62Controller3 = TextEditingController();
+  TextEditingController question62Controller4 = TextEditingController();
+  TextEditingController question62Controller5 = TextEditingController();
+  TextEditingController question62Controller6 = TextEditingController();
+  TextEditingController question62Controller7 = TextEditingController();
+  TextEditingController question62Controller8 = TextEditingController();
+  TextEditingController question62Controller9 = TextEditingController();
+  TextEditingController question62Controller10 = TextEditingController();
+  TextEditingController question62Controller11 = TextEditingController();
+  TextEditingController question62Controller12 = TextEditingController();
+  TextEditingController question62Controller13 = TextEditingController();
+  TextEditingController question62Controller14 = TextEditingController();
+  TextEditingController question62Controller15 = TextEditingController();
+  TextEditingController question62Controller16 = TextEditingController();
+  TextEditingController question62Controller17 = TextEditingController();
+  TextEditingController question62Controller18 = TextEditingController();
+  TextEditingController question62Controller19 = TextEditingController();
+  TextEditingController question62Controller20 = TextEditingController();
 
   String? userId;
 
@@ -94,7 +104,7 @@ class _Screen34State extends State<Screen34> {
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           child: const Text(
-                            SectionD.SECTION_D_SECTION_4,
+                            SectionD.SECTION_D_SECTION_3,
                             style: CustomStyle.screenTitle,
                           ),
                         ),
@@ -117,209 +127,305 @@ class _Screen34State extends State<Screen34> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                SectionD.SECTION_D_QUESTION_63,
+                                SectionD.SECTION_D_QUESTION_62,
                                 style: CustomStyle.questionTitle,
                               ),
                               space,
                               // 1st Row
-                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_1,
+                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_1,
                                   style: CustomStyle.questionBoldTitle),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller1,
+                                  controller: question62Controller1,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller2,
+                                  controller: question62Controller2,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller3,
+                                  controller: question62Controller3,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller4,
+                                  controller: question62Controller4,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                  style: CustomStyle.questionTitle),
+                              CustomOption.optionRadioButtons(const [
+                                '<10%',
+                                '10-30%',
+                                '30-50%',
+                                '>50%',
+                              ], true, _response62_1, setResponse62_1),
                               space,
                               // 1st Row End
                               // 2nd Row
-                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_2,
+                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_2,
                                   style: CustomStyle.questionBoldTitle),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller5,
+                                  controller: question62Controller5,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller6,
+                                  controller: question62Controller6,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller7,
+                                  controller: question62Controller7,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller8,
+                                  controller: question62Controller8,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
-                              //  2nd Row End
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                  style: CustomStyle.questionTitle),
+                              CustomOption.optionRadioButtons(const [
+                                '<10%',
+                                '10-30%',
+                                '30-50%',
+                                '>50%',
+                              ], true, _response62_2, setResponse62_2),
+                              space, // 2nd Row End
                               // 3rd Row
                               const Text(
                                   SectionD
-                                      .SECTION_D_QUESTION_63_POINT_3, // Only these change
+                                      .SECTION_D_QUESTION_62_POINT_3, // Only these change
                                   style: CustomStyle.questionBoldTitle),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
                                   controller:
-                                      question63Controller9, // Only these change
+                                      question62Controller9, // Only these change
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
                                   controller:
-                                      question63Controller10, // Only these change
+                                      question62Controller10, // Only these change
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
                                   controller:
-                                      question63Controller11, // Only these change
+                                      question62Controller11, // Only these change
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller12,
+                                  controller: question62Controller12,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                  style: CustomStyle.questionTitle),
+                              CustomOption.optionRadioButtons(const [
+                                '<10%',
+                                '10-30%',
+                                '30-50%',
+                                '>50%',
+                              ], true, _response62_3, setResponse62_3),
                               space,
                               // 3rd Row End
-                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_4,
+                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_4,
                                   style: CustomStyle.questionBoldTitle),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller13,
+                                  controller: question62Controller13,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller14,
+                                  controller: question62Controller14,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller15,
+                                  controller: question62Controller15,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
                               const Text(
-                                  SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
                                   style: CustomStyle.optionYesNo),
                               space,
                               TextField(
-                                  controller: question63Controller16,
+                                  controller: question62Controller16,
                                   style: CustomStyle.answer,
                                   textAlign: TextAlign.start,
                                   decoration:
                                       CustomStyle.answerInputDecoration),
                               space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                  style: CustomStyle.questionTitle),
+                              CustomOption.optionRadioButtons(const [
+                                '<10%',
+                                '10-30%',
+                                '30-50%',
+                                '>50%',
+                              ], true, _response62_4, setResponse62_4),
+                              space,
+
+                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_5,
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question62Controller17,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question62Controller18,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question62Controller19,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question62Controller20,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                  style: CustomStyle.questionTitle),
+                              CustomOption.optionRadioButtons(const [
+                                '<10%',
+                                '10-30%',
+                                '30-50%',
+                                '>50%',
+                              ], true, _response62_5, setResponse62_5),
                             ],
                           ),
                         ),
@@ -353,6 +459,22 @@ class _Screen34State extends State<Screen34> {
 
   navigateToPreviousScreen(BuildContext context) {
     Navigator.of(context).pop();
+  }
+
+  void setResponse62_1(String value) async {
+    // _response61 = value;
+  }
+  void setResponse62_2(String value) async {
+    // _response61 = value;
+  }
+  void setResponse62_3(String value) async {
+    // _response61 = value;
+  }
+  void setResponse62_4(String value) async {
+    // _response61 = value;
+  }
+  void setResponse62_5(String value) async {
+    // _response61 = value;
   }
 
   void setData() async {

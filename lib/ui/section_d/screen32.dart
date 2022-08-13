@@ -6,10 +6,9 @@ import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/home/home_page.dart';
-import 'package:ifri/ui/section_d/screen33.dart';
 import 'package:provider/provider.dart';
 
-// Q 62
+// Q 66 67
 class Screen32 extends StatefulWidget {
   const Screen32({Key? key}) : super(key: key);
 
@@ -209,7 +208,7 @@ class _Screen32State extends State<Screen32> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const Screen33();
+          return const HomePage();
         },
       ),
     );

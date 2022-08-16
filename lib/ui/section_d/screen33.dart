@@ -80,7 +80,7 @@ class _Screen33State extends State<Screen33> {
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                             child: const Text(
-                              SectionD.SECTION_D_SECTION_3,
+                              SectionD.SECTION_D_SECTION_2,
                               style: CustomStyle.screenTitle,
                             ),
                           ),

@@ -5,7 +5,7 @@ import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/section_d/screen37.dart';
+import 'package:ifri/ui/home/home_page.dart';
 import 'package:provider/provider.dart';
 
 // Q 64 65
@@ -293,7 +293,7 @@ class _Screen36State extends State<Screen36> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const Screen37();
+          return const HomePage();
         },
       ),
     );

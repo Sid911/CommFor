@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:ifri/splash.dart';
 import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/login/login_wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -64,10 +65,13 @@ class _MyAppState extends State<MyApp> {
         title: 'IFRI',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.green),
-        initialRoute: '/login',
+        initialRoute: '/splash',
         routes: {
           '/': (BuildContext ctx) {
             return const HomePage();
+          },
+          '/splash': (BuildContext ctx) {
+            return const Splash();
           },
           '/login': (BuildContext ctx) {
             return const LoginWrapper();

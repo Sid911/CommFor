@@ -185,7 +185,7 @@ class _Screen11State extends State<Screen11> {
                                 onTap: () => syncData(context),
                                 splashColor: Colors.lightBlue,
                                 borderRadius: BorderRadius.circular(2),
-                                child: CustomButton.submitButton),
+                                child: CustomButton.nextButton),
                           ],
                         ),
                         const SizedBox(

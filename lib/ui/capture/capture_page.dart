@@ -8,7 +8,7 @@ import 'package:ifri/constants/section_a.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
-import 'package:ifri/ui/section_d/screen30.dart';
+import 'package:ifri/ui/section_b/screen1.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:http_parser/http_parser.dart';
@@ -273,7 +273,7 @@ navigateToNextScreen(BuildContext context) {
   Navigator.of(context).push(
     MaterialPageRoute(
       builder: (_) {
-        return const Screen30();
+        return const Screen1();
       },
     ),
   );

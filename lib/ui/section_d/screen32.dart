@@ -6,12 +6,13 @@ import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/home/home_page.dart';
+import 'package:ifri/ui/section_d/screen33.dart';
 import 'package:provider/provider.dart';
 
 // Q 66 67
 class Screen32 extends StatefulWidget {
-  const Screen32({Key? key}) : super(key: key);
-
+  const Screen32({Key? key, required this.formName}) : super(key: key);
+  final String formName;
   @override
   State<Screen32> createState() => _Screen32State();
 }
@@ -37,7 +38,8 @@ class _Screen32State extends State<Screen32> {
   void initialize() async {
     userId = authService.user!.uid;
 
-    ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_d');
+    ref = FirebaseDatabase.instance
+        .ref('forms/${userId!}/${widget.formName}/section_d');
     setData();
   }
 
@@ -208,7 +210,7 @@ class _Screen32State extends State<Screen32> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const HomePage();
+          return Screen33(formName: widget.formName);
         },
       ),
     );

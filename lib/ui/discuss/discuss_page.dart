@@ -3,11 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
-import 'package:ifri/services/discussion_service/discussion_service_impl.dart';
 import 'package:ifri/style/custom_style.dart';
+import 'package:ifri/ui/discuss/all_posts_page.dart';
 import 'package:ifri/ui/discuss/new_post.dart';
+import 'package:ifri/ui/discuss/popular_posts.dart';
 import 'package:ifri/ui/discuss/recent_posts.dart';
 import 'package:ifri/ui/discuss/search_page.dart';
+
 import 'package:provider/provider.dart';
 
 class DiscussPage extends StatefulWidget {
@@ -30,6 +32,21 @@ class _DiscussPageState extends State<DiscussPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const AllPostsPage(),
+            ),
+          );
+        },
+        backgroundColor: Colors.greenAccent,
+        label: const Text(
+          "View All",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
       appBar: AppBar(
         title: const Text("Forum"),
         backgroundColor: Colors.grey.shade900,
@@ -80,11 +97,19 @@ class _DiscussPageState extends State<DiscussPage> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                 child: Text(
-                  "Recent Questions",
+                  "Popular Questions",
                   style: CustomStyle.screenTitle,
                 ),
               ),
-              RecentPosts(),
+              PopularPosts(),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                child: Text(
+                  "Recently Posted",
+                  style: CustomStyle.screenTitle,
+                ),
+              ),
+              RecentPosts()
             ],
           ),
         ),

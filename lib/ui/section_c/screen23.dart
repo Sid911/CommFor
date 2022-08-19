@@ -8,8 +8,8 @@ import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:provider/provider.dart';
 
 class Screen23 extends StatefulWidget {
-  const Screen23({Key? key}) : super(key: key);
-
+  const Screen23({Key? key, required this.formName}) : super(key: key);
+  final String formName;
   @override
   State<Screen23> createState() => _Screen23State();
 }
@@ -39,7 +39,8 @@ class _Screen23State extends State<Screen23> {
   void initialize() async {
     userId = authService.user!.uid;
 
-    ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_c');
+    ref = FirebaseDatabase.instance
+        .ref('forms/${userId!}/${widget.formName}/section_c');
     setData();
   }
 
@@ -279,7 +280,7 @@ class _Screen23State extends State<Screen23> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const Screen24();
+          return Screen24(formName: widget.formName);
         },
       ),
     );

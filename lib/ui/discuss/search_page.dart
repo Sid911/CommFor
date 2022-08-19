@@ -7,7 +7,7 @@ import 'package:ifri/services/discussion_service/discussion_data.dart';
 import 'package:ifri/services/discussion_service/discussion_service_impl.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/discuss/post_view.dart';
-import 'package:ifri/ui/discuss/recent_posts.dart';
+import 'package:ifri/ui/discuss/popular_posts.dart';
 import 'package:provider/provider.dart';
 
 class SearchPage extends StatefulWidget {

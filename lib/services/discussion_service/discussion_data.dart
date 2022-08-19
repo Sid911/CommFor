@@ -97,8 +97,6 @@ class BugReportData {
   final String description;
   final String stepsToFind;
   final String? screenshotURL;
-  final int? upvotes;
-  final List<String>? upvotersUID;
 
   BugReportData({
     required this.bugReportUID,
@@ -106,8 +104,6 @@ class BugReportData {
     required this.description,
     required this.stepsToFind,
     required this.screenshotURL,
-    required this.upvotes,
-    required this.upvotersUID,
   });
 
   BugReportData.fromMap(Map<String, dynamic> map)
@@ -115,9 +111,7 @@ class BugReportData {
         title = map['title'],
         description = map['description'],
         stepsToFind = map['stepsToFind'],
-        screenshotURL = map['screenshotURL'],
-        upvotes = map['upvotes'],
-        upvotersUID = map['upvotersUID'];
+        screenshotURL = map['screenshotURL'];
 
   Map<String, dynamic> toMap() {
     return {
@@ -126,8 +120,6 @@ class BugReportData {
       'description': description,
       'stepsToFind': stepsToFind,
       'screenshotURL': screenshotURL,
-      'upvotes': upvotes,
-      'upvotersUID': upvotersUID,
     };
   }
 }

@@ -14,8 +14,8 @@ import 'package:provider/provider.dart';
 import 'package:http_parser/http_parser.dart';
 
 class CapturePage extends StatefulWidget {
-  const CapturePage({Key? key}) : super(key: key);
-
+  const CapturePage({Key? key, required this.formName}) : super(key: key);
+  final String formName;
   @override
   State<CapturePage> createState() => _CapturePageState();
 }
@@ -46,7 +46,8 @@ class _CapturePageState extends State<CapturePage> {
   void initialize() async {
     // User should be logged in
     userId = authService.user!.uid;
-    ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_b');
+    ref = FirebaseDatabase.instance
+        .ref('forms/${userId!}/${widget.formName}/section_b');
     setData();
   }
 
@@ -271,14 +272,14 @@ class _CapturePageState extends State<CapturePage> {
       }
     }).whenComplete(() => navigateToNextScreen(context));
   }
-}
 
-navigateToNextScreen(BuildContext context) {
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (_) {
-        return const Screen1();
-      },
-    ),
-  );
+  navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return Screen1(formName: widget.formName);
+        },
+      ),
+    );
+  }
 }

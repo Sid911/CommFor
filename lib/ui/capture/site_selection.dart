@@ -66,12 +66,17 @@ class _SiteSelectionState extends State<SiteSelection> {
                           OutlinedButton(
                               onPressed: () {
                                 if (controller.text.isEmpty) return;
-                                ref!
+                                final newRef = ref!
                                     .child(controller.text.trim())
                                     .child("section_b")
-                                    .child('question_1')
+                                    .child("capture")
+                                    .child('question_1');
+
+                                newRef
                                     .child("question")
-                                    .set(controller.text);
+                                    .set("Name of the Site");
+                                newRef.child("response").set(controller.text);
+                                Navigator.pop(context);
                               },
                               child: const Text(
                                 "Save",
@@ -151,6 +156,17 @@ class _SiteSelectionState extends State<SiteSelection> {
                   ],
                 ),
                 Container(
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  color: Colors.black,
+                  child: Text(
+                    """
+Note: After adding a new site, this list might not update immediately. 
+Please go back and return to this page to see the new site""",
+                    style: CustomStyle.form.copyWith(fontSize: 12),
+                  ),
+                ),
+                Container(
                   margin: const EdgeInsets.only(top: 50),
                   child: FutureBuilder<List<String>?>(
                     future: getData(),
@@ -169,7 +185,7 @@ class _SiteSelectionState extends State<SiteSelection> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (_) => const CapturePage(),
+                                      builder: (_) => CapturePage(formName: e),
                                     ),
                                   );
                                 },

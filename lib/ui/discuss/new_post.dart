@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -14,6 +15,7 @@ class NewPost extends StatefulWidget {
   const NewPost({Key? key, this.isReply = false, this.ref}) : super(key: key);
   final bool isReply;
   final DocumentReference? ref;
+
   @override
   State<NewPost> createState() => _NewPostState();
 }
@@ -24,7 +26,9 @@ class _NewPostState extends State<NewPost> {
 
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
+  TextEditingController stepsController = TextEditingController();
 
+  PlatformFile? file;
   bool isBugReport = false;
 
   void setBugReport(bool? val) {
@@ -78,6 +82,47 @@ class _NewPostState extends State<NewPost> {
     }
   }
 
+  Future<void> makeBugReport() async {
+    String? location = file == null ? null : "bugs/${file?.name}";
+    if (file != null) {
+      final storageRef = FirebaseStorage.instance.ref();
+      final imageRef = storageRef.child("bugs/${file!.name}");
+      try {
+        await imageRef.putData(file!.bytes!);
+      } on FirebaseException catch (e) {
+        discussionService.logger.e("Error Uploading Image", e, e.stackTrace);
+        location = null;
+        Fluttertoast.showToast(msg: "Error Uploading Image");
+      }
+    }
+
+    final bug = BugReportData(
+      bugReportUID: "none",
+      title: titleController.text,
+      description: descController.text,
+      stepsToFind: stepsController.text,
+      screenshotURL: location,
+    );
+
+    DocumentReference<Map<String, dynamic>>? reference;
+    reference =
+        await discussionService.makeBugReport(bug).onError((error, stackTrace) {
+      discussionService.logger.e("Error making post ", error, stackTrace);
+      Fluttertoast.showToast(
+        msg: "Error posting the question ! ",
+        toastLength: Toast.LENGTH_LONG,
+      );
+    });
+    if (reference != null) {
+      reference.set({"bugReportID": reference.id}, SetOptions(merge: true));
+      await Fluttertoast.showToast(
+        msg: "Bug Posted",
+        toastLength: Toast.LENGTH_LONG,
+      );
+      Navigator.pop(context);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -95,7 +140,13 @@ class _NewPostState extends State<NewPost> {
         title: Text(widget.isReply ? "New Reply" : "New Post"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: makePost,
+        onPressed: () {
+          if (isBugReport) {
+            makeBugReport();
+          } else {
+            makePost();
+          }
+        },
         child: const Icon(FlutterRemix.send_plane_2_fill),
       ),
       backgroundColor: Colors.grey.shade900,
@@ -107,7 +158,10 @@ class _NewPostState extends State<NewPost> {
               children: [
                 if (!widget.isReply)
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
                     child: CheckboxListTile(
                       value: isBugReport,
                       onChanged: setBugReport,
@@ -116,9 +170,27 @@ class _NewPostState extends State<NewPost> {
                         style: CustomStyle.questionTitle,
                       ),
                       tileColor: Colors.black,
+                      checkColor: Colors.black,
                       checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                if (!widget.isReply)
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
+                    child: ListTile(
+                      title: Text(
+                        "Note : Bug reports directly are sent to the admins anonymously. Click on the above button to send one",
+                        style: CustomStyle.form.copyWith(fontSize: 10),
+                      ),
+                      tileColor: Colors.grey.shade800,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -182,14 +254,37 @@ class _NewPostState extends State<NewPost> {
                 ),
                 if (isBugReport)
                   Container(
+                    color: Colors.black,
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    child: TextField(
+                      autocorrect: true,
+                      controller: stepsController,
+                      maxLength: 1000,
+                      minLines: 2,
+                      maxLines: 15,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Steps to reproduce",
+                        hintStyle: CustomStyle.form
+                            .copyWith(color: Colors.grey.shade600),
+                        counterStyle: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: CustomStyle.form,
+                    ),
+                  ),
+                if (isBugReport)
+                  Container(
                     margin: const EdgeInsets.symmetric(
                       horizontal: 10,
                       vertical: 20,
                     ),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20),
-                      onTap: () {
-                        final res = selectFile();
+                      onTap: () async {
+                        file = await selectFile();
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -217,7 +312,8 @@ class _NewPostState extends State<NewPost> {
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.image,
         allowMultiple: false,
-        dialogTitle: "Pick GeoJSON file",
+        dialogTitle: "Pick Image file",
+        withData: true,
       );
 
       if (result != null) {

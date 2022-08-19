@@ -1,6 +1,7 @@
 import 'package:algolia/algolia.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:logger/logger.dart';
 
 import 'discussion_data.dart';
@@ -32,23 +33,46 @@ class DiscussionService {
     return ref;
   }
 
-  Future<PostData?> getPost(String id) async {
+  Stream<QuerySnapshot> viewAllPosts() {
     // get post
-    await db.doc(id).get().then(
-      (DocumentSnapshot doc) {
-        final data = doc.data() as Map<String, dynamic>;
-        return PostData.fromMap(data);
-      },
-      onError: (e) {
-        logger.e("Error getting document:", e);
-        throw e;
-      },
-    );
-    return null;
+    return db.orderBy('authoredDate', descending: true).snapshots();
   }
 
-  Future<void> makeBugReport(BugReportData data) async {
-    // make bug
+  Future<PostData?> getPost(String id) async {
+    // get post
+    final doc = await db.doc(id).get();
+    if (doc.data() == null) return null;
+    final data = doc.data() as Map<String, dynamic>;
+    return PostData.fromMap(data);
+  }
+
+  Future<bool?> upvotePost(String id, String uid) async {
+    final data = await getPost(id);
+    if (data == null) {
+      Fluttertoast.showToast(msg: "Error adding an upvote");
+      return null;
+    }
+    final ref = FirebaseFirestore.instance.collection('posts').doc(id);
+    if (data.upvotersUID.contains(uid)) {
+      ref.set({
+        'upvotes': data.upvotes - 1,
+        'upvotersUID': data.upvotersUID..remove(uid)
+      }, SetOptions(merge: true));
+      return false;
+    } else {
+      ref.set({
+        'upvotes': data.upvotes + 1,
+        'upvotersUID': data.upvotersUID..add(uid)
+      }, SetOptions(merge: true));
+      return true;
+    }
+  }
+
+  Future<DocumentReference<Map<String, dynamic>>?> makeBugReport(
+      BugReportData data) async {
+    return await FirebaseFirestore.instance
+        .collection("bugs")
+        .add(data.toMap());
   }
 
   Stream<QuerySnapshot> getRecentPosts(int length) {
@@ -56,6 +80,15 @@ class DiscussionService {
     return FirebaseFirestore.instance
         .collection('posts')
         .orderBy('authoredDate', descending: true)
+        .limit(length)
+        .snapshots();
+  }
+
+  Stream<QuerySnapshot> getPopularPosts(int length) {
+    // get recent posts for questions
+    return FirebaseFirestore.instance
+        .collection('posts')
+        .orderBy('upvotes', descending: true)
         .limit(length)
         .snapshots();
   }

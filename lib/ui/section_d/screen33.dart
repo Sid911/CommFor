@@ -10,8 +10,8 @@ import 'package:provider/provider.dart';
 
 // Q 66 67
 class Screen33 extends StatefulWidget {
-  const Screen33({Key? key}) : super(key: key);
-
+  const Screen33({Key? key, required this.formName}) : super(key: key);
+  final String formName;
   @override
   State<Screen33> createState() => _Screen33State();
 }
@@ -37,7 +37,8 @@ class _Screen33State extends State<Screen33> {
   void initialize() async {
     userId = authService.user!.uid;
 
-    ref = FirebaseDatabase.instance.ref('forms/${userId!}/1/section_d');
+    ref = FirebaseDatabase.instance
+        .ref('forms/${userId!}/${widget.formName}/section_d');
     setData();
   }
 
@@ -208,7 +209,7 @@ class _Screen33State extends State<Screen33> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return const Screen34();
+          return Screen34(formName: widget.formName);
         },
       ),
     );

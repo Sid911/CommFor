@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/services/discussion_service/discussion_data.dart';
 import 'package:ifri/services/discussion_service/discussion_service_impl.dart';
 import 'package:ifri/style/custom_style.dart';
@@ -21,11 +22,14 @@ class PostView extends StatefulWidget {
 
 class _PostViewState extends State<PostView> {
   late DiscussionService discussionService;
-
+  late FirebaseAuthService authService;
+  int upvotes = 0;
   @override
   void initState() {
     super.initState();
     discussionService = context.read<DiscussionService>();
+    authService = context.read<FirebaseAuthService>();
+    upvotes = widget.data.upvotes;
   }
 
   @override
@@ -88,21 +92,42 @@ class _PostViewState extends State<PostView> {
                     "Replies",
                     style: CustomStyle.questionTitle,
                   ),
-                  IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => NewPost(
-                              isReply: true,
-                              ref: widget.ref,
-                            ),
-                          ));
-                    },
-                    icon: const Icon(
-                      FlutterRemix.add_fill,
-                      color: Colors.white,
-                    ),
+                  Row(
+                    children: [
+                      TextButton.icon(
+                        onPressed: () async {
+                          final res = await discussionService.upvotePost(
+                              widget.ref.id, authService.user!.uid);
+                          if (res != null) {
+                            setState(() {
+                              upvotes += res ? 1 : -1;
+                            });
+                          }
+                        },
+                        icon: const Icon(
+                          FlutterRemix.arrow_drop_up_fill,
+                          color: Colors.greenAccent,
+                          size: 30,
+                        ),
+                        label: Text(upvotes.toString()),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => NewPost(
+                                  isReply: true,
+                                  ref: widget.ref,
+                                ),
+                              ));
+                        },
+                        icon: const Icon(
+                          FlutterRemix.add_fill,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),

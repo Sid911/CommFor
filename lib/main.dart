@@ -82,18 +82,6 @@ class _MyAppState extends State<MyApp> {
           '/login': (BuildContext ctx) {
             return const LoginWrapper();
           },
-          '/section_b_screen_6': (BuildContext ctx) {
-            return const Screen6();
-          },
-          '/section_b_screen_7': (BuildContext ctx) {
-            return const Screen7();
-          },
-          '/section_b_screen_8': (BuildContext ctx) {
-            return const Screen8();
-          },
-          '/section_b_screen_9': (BuildContext ctx) {
-            return const Screen9();
-          }
         },
       ),
     );

@@ -8,6 +8,8 @@ import 'package:ifri/ui/discuss/discuss_page.dart';
 import 'package:ifri/ui/visualise/visualise_page.dart';
 import 'package:provider/provider.dart';
 
+import '../capture/site_selection.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -71,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (ctx) => const CapturePage(),
+                            builder: (ctx) => const SiteSelection(),
                           ),
                         );
                       },
@@ -144,17 +146,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Text(
-                      "Coming Soon!",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontFamily: "HelveticaNeue",
-                      ),
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: InkWell(
@@ -170,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                         width: size.width - 40,
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF7D893B).withOpacity(0.6),
+                          color: const Color(0xFF7D893B),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(

@@ -192,7 +192,11 @@ class _CapturePageState extends State<CapturePage> {
       isUploading = progress == 1 ? false : true;
       uploadProgress = progress;
     });
-    if (progress == 1) Fluttertoast.showToast(msg: "Upload File Complete");
+    if (progress == 1)
+      Fluttertoast.showToast(
+        msg: "Upload File Complete",
+        toastLength: Toast.LENGTH_LONG,
+      );
   }
 
   Future<PlatformFile?> selectFile() async {
@@ -215,7 +219,7 @@ class _CapturePageState extends State<CapturePage> {
         return null;
       }
     }
-    if (await Permission.speech.isPermanentlyDenied) {
+    if (await Permission.storage.isPermanentlyDenied) {
       // The user opted to never again see the permission request dialog for this
       // app. The only way to change the permission's status now is to let the
       // user manually enable it in the system settings.

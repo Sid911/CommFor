@@ -54,6 +54,7 @@ dependencies:
   shared_preferences: ^2.0.15
   file_picker: ^5.0.0
   easy_image_viewer: ^1.0.4
+  algolia: ^1.1.1
 
 dev_dependencies:
   flutter_test:

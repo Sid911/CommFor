@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:provider/provider.dart';
 
@@ -75,22 +76,20 @@ class _ForgotPasswordCardState extends State<ForgotPasswordCard> {
                 padding: const EdgeInsets.only(bottom: 100, top: 20),
                 child: MaterialButton(
                   onPressed: () async {
-                    const res = null;
-                    // final res = await authService.registerWithEmailAndPassword(
-                    //   email: emailController.text.trim(),
-                    //   password: passwordController.text.trim(),
-                    //   org: orgNameController.text.trim(),
-                    //   username: usernameController.text.trim(),
-                    //   country: contNameController.text.trim(),
-                    // );
+                    final res = await authService.forgotPassword(
+                      emailController.text.trim(),
+                    );
                     // handle errors better as we need to check for weak password etc.
+                    if (res == true) {
+                      Fluttertoast.showToast(
+                        msg: "A reset email has been sent!",
+                        toastLength: Toast.LENGTH_LONG,
+                      );
+                    }
                     if (res == null) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            "We cannot find your email.",
-                          ),
-                        ),
+                      Fluttertoast.showToast(
+                        msg: "Unexpected Error happened",
+                        toastLength: Toast.LENGTH_LONG,
                       );
                     }
                     Navigator.pop(context);

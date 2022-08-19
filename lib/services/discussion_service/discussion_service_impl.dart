@@ -1,98 +1,78 @@
+import 'package:algolia/algolia.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:logger/logger.dart';
+
+import 'discussion_data.dart';
 
 /// This is Discussion Service which deals with the discussion forum
 class DiscussionService {
-  DiscussionService(this.uid);
-  final String uid;
-  FirebaseStorage instance = FirebaseStorage.instance;
+  DiscussionService();
+  static final Algolia algolia = Algolia.init(
+    applicationId: '4XN1GAX5VY',
+    apiKey: '38df6d2551bcb41caf9f8babd8d93c56',
+  );
+  Logger logger = Logger();
 
-  Future<void> makePost(PostData data) async {
+  final db = FirebaseFirestore.instance.collection('posts');
+
+  Future<DocumentReference<Map<String, dynamic>>?> makeReply(
+      DocumentReference reference, PostData reply) async {
+    final res = await reference
+        .collection('replies')
+        .add(reply.copyWith(isReply: true).toMap());
+    return res;
+  }
+
+  Future<DocumentReference<Map<String, dynamic>>?> makePost(
+    PostData data,
+  ) async {
     /// makes the post
+    var ref = db.add(data.toMap());
+    return ref;
   }
 
-  Future<void> makeBugReport(BugReportData data) async {}
-
-  Future<List<PostData>?> getRecentPosts(int length) async {
-    // get recent posts for questions
-  }
-
-  Future<List<BugReportData>?> getRecentBugReports(int length) async {
-    // ger recent bug reports posted in the forum
-  }
-}
-
-class PostData {
-  final String postUID;
-  final String authorName;
-  final String authorUID;
-  final String postTitle;
-  final String postDescription;
-  final DateTime authoredDate;
-  final DateTime lastEdited;
-  final int upvotes;
-  final List<String> upvotersUID;
-  final bool isReply;
-  final List<String> replies;
-
-  PostData copyWith({
-    String? postUID,
-    String? authorName,
-    String? authorUID,
-    String? postTitle,
-    String? postDescription,
-    DateTime? authoredDate,
-    DateTime? lastEdited,
-    int? upvotes,
-    List<String>? upvotersUID,
-    bool? isReply,
-    List<String>? replies,
-  }) {
-    return PostData(
-      postUID: postUID ?? this.postUID,
-      authorName: authorName ?? this.authorName,
-      authorUID: authorUID ?? this.authorUID,
-      postTitle: postTitle ?? this.postTitle,
-      postDescription: postDescription ?? this.postDescription,
-      authoredDate: authoredDate ?? this.authoredDate,
-      lastEdited: lastEdited ?? this.lastEdited,
-      upvotes: upvotes ?? this.upvotes,
-      upvotersUID: upvotersUID ?? this.upvotersUID,
-      isReply: isReply ?? this.isReply,
-      replies: replies ?? this.replies,
+  Future<PostData?> getPost(String id) async {
+    // get post
+    await db.doc(id).get().then(
+      (DocumentSnapshot doc) {
+        final data = doc.data() as Map<String, dynamic>;
+        return PostData.fromMap(data);
+      },
+      onError: (e) {
+        logger.e("Error getting document:", e);
+        throw e;
+      },
     );
+    return null;
   }
 
-  PostData({
-    required this.postUID,
-    required this.authorName,
-    required this.authorUID,
-    required this.postTitle,
-    required this.postDescription,
-    required this.authoredDate,
-    required this.lastEdited,
-    required this.upvotes,
-    required this.upvotersUID,
-    required this.isReply,
-    required this.replies,
-  });
-}
+  Future<void> makeBugReport(BugReportData data) async {
+    // make bug
+  }
 
-class BugReportData {
-  final String bugReportUID;
-  final String title;
-  final String description;
-  final String stepsToFind;
-  final String? screenshotURL;
-  final int? upvotes;
-  final List<String>? upvotersUID;
+  Stream<QuerySnapshot> getRecentPosts(int length) {
+    // get recent posts for questions
+    return FirebaseFirestore.instance
+        .collection('posts')
+        .orderBy('authoredDate', descending: true)
+        .limit(length)
+        .snapshots();
+  }
 
-  BugReportData({
-    required this.bugReportUID,
-    required this.title,
-    required this.description,
-    required this.stepsToFind,
-    required this.screenshotURL,
-    required this.upvotes,
-    required this.upvotersUID,
-  });
+  Stream<QuerySnapshot> getReplies(DocumentReference postReference) {
+    return postReference
+        .collection('replies')
+        .orderBy('authoredDate', descending: true)
+        .snapshots();
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getRecentBugReports(int length) {
+    // ger recent bug reports posted in the forum
+    return FirebaseFirestore.instance
+        .collection('bugs')
+        .orderBy('authoredDate')
+        .limit(length)
+        .snapshots();
+  }
 }

@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:ifri/services/discussion_service/discussion_service_impl.dart';
 import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/login/login_wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -59,6 +61,7 @@ class _MyAppState extends State<MyApp> {
       providers: [
         Provider<FirebaseAuthService>(create: (_) => FirebaseAuthService()),
         Provider<Dio>(create: (_) => dio),
+        Provider<DiscussionService>(create: (_) => DiscussionService())
       ],
       child: MaterialApp(
         title: 'IFRI',

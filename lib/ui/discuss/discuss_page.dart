@@ -1,6 +1,14 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
+import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
+import 'package:ifri/services/discussion_service/discussion_service_impl.dart';
 import 'package:ifri/style/custom_style.dart';
+import 'package:ifri/ui/discuss/new_post.dart';
+import 'package:ifri/ui/discuss/recent_posts.dart';
+import 'package:ifri/ui/discuss/search_page.dart';
+import 'package:provider/provider.dart';
 
 class DiscussPage extends StatefulWidget {
   const DiscussPage({Key? key}) : super(key: key);
@@ -10,6 +18,14 @@ class DiscussPage extends StatefulWidget {
 }
 
 class _DiscussPageState extends State<DiscussPage> {
+  late FirebaseAuthService authService;
+
+  @override
+  void initState() {
+    super.initState();
+    authService = context.read<FirebaseAuthService>();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +37,31 @@ class _DiscussPageState extends State<DiscussPage> {
         actions: [
           IconButton(
             splashRadius: 25,
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (ctx) {
+                  return const SearchPage();
+                },
+                barrierDismissible: true,
+                useRootNavigator: true,
+                useSafeArea: false,
+              );
+            },
             icon: const Icon(
               FlutterRemix.search_2_line,
             ),
           ),
           IconButton(
             splashRadius: 25,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => const NewPost(),
+                ),
+              );
+            },
             icon: const Icon(
               FlutterRemix.add_fill,
             ),
@@ -38,11 +71,20 @@ class _DiscussPageState extends State<DiscussPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               InfoCard(
                 info: "Feel free to ask questions and reply to other people. "
                     "Also any help in finding bugs is appreciated :)",
               ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                child: Text(
+                  "Recent Questions",
+                  style: CustomStyle.screenTitle,
+                ),
+              ),
+              RecentPosts(),
             ],
           ),
         ),

@@ -145,7 +145,7 @@ class _RegistrationCardState extends State<RegistrationCard> {
                 ),
                 child: TextField(
                   controller: contNameController,
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   style: const TextStyle(
                     color: Color(0xFFD1D0BD),
                     fontFamily: 'HelveticaNeue',

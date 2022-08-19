@@ -4,7 +4,6 @@ import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/ui/section_d/screen29.dart';
 import 'package:provider/provider.dart';
@@ -163,7 +162,7 @@ class _Screen28State extends State<Screen28> {
                                 onTap: () => syncData(context),
                                 splashColor: Colors.lightBlue,
                                 borderRadius: BorderRadius.circular(2),
-                                child: CustomButton.submitButton),
+                                child: CustomButton.nextButton),
                           ],
                         ),
                         const SizedBox(

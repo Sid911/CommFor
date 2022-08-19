@@ -33,7 +33,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_svg: ^0.22.0
+  flutter_svg: ^1.1.3
   custom_radio_grouped_button: ^2.1.2+2
   json_annotation: ^4.6.0
   dio: ^4.0.6
@@ -55,6 +55,10 @@ dependencies:
   file_picker: ^5.0.0
   easy_image_viewer: ^1.0.4
   algolia: ^1.1.1
+  animated_splash_screen: ^1.3.0
+  flutter_native_splash: ^2.2.7
+  page_transition: ^2.0.9
+
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +76,10 @@ dev_dependencies:
   retrofit_generator: ^4.0.2
   hive_generator: ^1.1.3
 
+
+flutter_native_splash:
+  image: assets/Colored Logo@2x.png
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -84,6 +92,8 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/Colored Logo@2x.png
+    - assets/Colored Logo@3x.png
 
   fonts:
     - family: HelveticaNeue

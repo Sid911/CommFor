@@ -5,7 +5,6 @@ import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/section_d/screen35.dart';
 import 'package:provider/provider.dart';
 

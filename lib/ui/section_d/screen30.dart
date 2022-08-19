@@ -20,7 +20,12 @@ class _Screen30State extends State<Screen30> {
   DatabaseReference? ref;
   String screenName = "screen_30";
   bool isLoading = true;
-  final String _response61 = "";
+  final String _response56_1 = "";
+  final String _response56_2 = "";
+  final String _response56_3 = "";
+  final String _response56_4 = "";
+  final String _response56_5 = "";
+  final String _response56_6 = "";
 
   String? userId;
 
@@ -78,7 +83,7 @@ class _Screen30State extends State<Screen30> {
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           child: const Text(
-                            SectionD.SECTION_D_SECTION_3,
+                            SectionD.SECTION_D_SECTION_2,
                             style: CustomStyle.screenTitle,
                           ),
                         ),
@@ -129,7 +134,7 @@ class _Screen30State extends State<Screen30> {
                                 SectionD.SECTION_D_QUESTION_56_OPTION_4,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_5,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response61, setResponse61),
+                              ], true, _response56_1, setResponse56_1),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -155,7 +160,7 @@ class _Screen30State extends State<Screen30> {
                                 SectionD.SECTION_D_QUESTION_56_OPTION_4,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_5,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response61, setResponse61),
+                              ], true, _response56_2, setResponse56_2),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -181,7 +186,7 @@ class _Screen30State extends State<Screen30> {
                                 SectionD.SECTION_D_QUESTION_56_OPTION_4,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_5,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response61, setResponse61),
+                              ], true, _response56_3, setResponse56_3),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -207,7 +212,7 @@ class _Screen30State extends State<Screen30> {
                                 SectionD.SECTION_D_QUESTION_56_OPTION_4,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_5,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response61, setResponse61),
+                              ], true, _response56_4, setResponse56_4),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -233,7 +238,7 @@ class _Screen30State extends State<Screen30> {
                                 SectionD.SECTION_D_QUESTION_56_OPTION_4,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_5,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response61, setResponse61),
+                              ], true, _response56_5, setResponse56_5),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -259,7 +264,7 @@ class _Screen30State extends State<Screen30> {
                                 SectionD.SECTION_D_QUESTION_56_OPTION_4,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_5,
                                 SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response61, setResponse61),
+                              ], true, _response56_6, setResponse56_6),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -295,8 +300,23 @@ class _Screen30State extends State<Screen30> {
     setState(() {});
   }
 
-  void setResponse61(String value) async {
-    // _response61 = value;
+  void setResponse56_1(String value) async {
+    // _response56 = value;
+  }
+  void setResponse56_2(String value) async {
+    // _response56 = value;
+  }
+  void setResponse56_3(String value) async {
+    // _response56 = value;
+  }
+  void setResponse56_4(String value) async {
+    // _response56 = value;
+  }
+  void setResponse56_5(String value) async {
+    // _response56 = value;
+  }
+  void setResponse56_6(String value) async {
+    // _response56 = value;
   }
 
   navigateToPreviousScreen(BuildContext context) {

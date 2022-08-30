@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                   child: Container(
                     padding: const EdgeInsets.all(10),
-                    child: const Text("For ManGoES"),
+                    child: const Text("CommFor"),
                   ),
                 ),
                 backgroundColor: Colors.transparent,

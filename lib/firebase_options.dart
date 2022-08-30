@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -51,21 +54,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD-Tg5a7d39Er9RSGEZj1_FB_s_anz_gaA',
-    appId: '1:191546066082:android:9bc36449173251c2d483fb',
+    appId: '1:191546066082:android:32ecd1d129d20275d483fb',
     messagingSenderId: '191546066082',
     projectId: 'commfor-backend',
     databaseURL: 'https://commfor-backend-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'commfor-backend.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDSltMjvQyHDWkf8vlJV4tfOMCLaziuQ8g',
-    appId: '1:191546066082:ios:1803da2c767ee0edd483fb',
-    messagingSenderId: '191546066082',
-    projectId: 'commfor-backend',
-    databaseURL: 'https://commfor-backend-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'commfor-backend.appspot.com',
-    iosClientId: '191546066082-dt389oe78ea3mnucdqlqchbr1r5kga7l.apps.googleusercontent.com',
-    iosBundleId: 'com.example.ifri',
   );
 }

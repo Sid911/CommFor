@@ -84,10 +84,13 @@ class PostMini extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            postData.postTitle,
-            style: CustomStyle.questionBoldTitle.copyWith(fontSize: 14),
-            overflow: TextOverflow.ellipsis,
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.45,
+            child: Text(
+              postData.postTitle,
+              style: CustomStyle.questionBoldTitle.copyWith(fontSize: 14),
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,

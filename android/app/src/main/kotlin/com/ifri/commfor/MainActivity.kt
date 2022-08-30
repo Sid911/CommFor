@@ -1,4 +1,4 @@
-package com.example.ifri
+package com.ifri.commfor
 
 import io.flutter.embedding.android.FlutterActivity
 

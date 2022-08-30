@@ -41,6 +41,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191546066082:android:32ecd1d129d20275d483fb",
+        "android_client_info": {
+          "package_name": "com.ifri.commfor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191546066082-ft8klld6ohfuhu0nij8fdgot2cln1poq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-Tg5a7d39Er9RSGEZj1_FB_s_anz_gaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191546066082-ft8klld6ohfuhu0nij8fdgot2cln1poq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "191546066082-dt389oe78ea3mnucdqlqchbr1r5kga7l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ifri"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

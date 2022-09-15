@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_d.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
-import 'package:ifri/style/custom_option.dart';
+import 'package:ifri/style/custom_multi_select.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/section_d/screen31.dart';
 import 'package:provider/provider.dart';
@@ -20,12 +20,12 @@ class _Screen30State extends State<Screen30> {
   DatabaseReference? ref;
   String screenName = "screen_30";
   bool isLoading = true;
-  final String _response56_1 = "";
-  final String _response56_2 = "";
-  final String _response56_3 = "";
-  final String _response56_4 = "";
-  final String _response56_5 = "";
-  final String _response56_6 = "";
+  final List<String> _response56_1 = [];
+  final List<String> _response56_2 = [];
+  final List<String> _response56_3 = [];
+  final List<String> _response56_4 = [];
+  final List<String> _response56_5 = [];
+  final List<String> _response56_6 = [];
 
   String? userId;
 
@@ -49,6 +49,15 @@ class _Screen30State extends State<Screen30> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> reportList = [
+      SectionD.SECTION_D_QUESTION_56_OPTION_1,
+      SectionD.SECTION_D_QUESTION_56_OPTION_2,
+      SectionD.SECTION_D_QUESTION_56_OPTION_3,
+      SectionD.SECTION_D_QUESTION_56_OPTION_4,
+      SectionD.SECTION_D_QUESTION_56_OPTION_5,
+      SectionD.SECTION_D_QUESTION_56_OPTION_6,
+      SectionD.SECTION_D_QUESTION_56_OPTION_7,
+    ];
     if (isLoading) {
       return Container();
     } else {
@@ -128,21 +137,15 @@ class _Screen30State extends State<Screen30> {
                               // Will be here
                               const Text(SectionD.SECTION_D_QUESTION_56_POINT_1,
                                   style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons([
-                                SectionD.SECTION_D_QUESTION_56_OPTION_1,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_2,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_3,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_4,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_5,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response56_1, setResponse56_1),
-                              const SizedBox(
-                                height: 10,
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse56_1(selectedList);
+                                },
                               ),
                             ],
                           ),
                         ),
-                        space,
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 10.0, right: 10.0, top: 25.0),
@@ -154,21 +157,15 @@ class _Screen30State extends State<Screen30> {
                               // Will be here
                               const Text(SectionD.SECTION_D_QUESTION_56_POINT_2,
                                   style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons([
-                                SectionD.SECTION_D_QUESTION_56_OPTION_1,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_2,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_3,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_4,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_5,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response56_2, setResponse56_2),
-                              const SizedBox(
-                                height: 10,
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse56_2(selectedList);
+                                },
                               ),
                             ],
                           ),
                         ),
-                        space,
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 10.0, right: 10.0, top: 25.0),
@@ -180,21 +177,15 @@ class _Screen30State extends State<Screen30> {
                               // Will be here
                               const Text(SectionD.SECTION_D_QUESTION_56_POINT_3,
                                   style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons([
-                                SectionD.SECTION_D_QUESTION_56_OPTION_1,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_2,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_3,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_4,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_5,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response56_3, setResponse56_3),
-                              const SizedBox(
-                                height: 10,
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse56_3(selectedList);
+                                },
                               ),
                             ],
                           ),
                         ),
-                        space,
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 10.0, right: 10.0, top: 25.0),
@@ -206,21 +197,15 @@ class _Screen30State extends State<Screen30> {
                               // Will be here
                               const Text(SectionD.SECTION_D_QUESTION_56_POINT_4,
                                   style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons([
-                                SectionD.SECTION_D_QUESTION_56_OPTION_1,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_2,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_3,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_4,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_5,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response56_4, setResponse56_4),
-                              const SizedBox(
-                                height: 10,
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse56_4(selectedList);
+                                },
                               ),
                             ],
                           ),
                         ),
-                        space,
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 10.0, right: 10.0, top: 25.0),
@@ -232,21 +217,15 @@ class _Screen30State extends State<Screen30> {
                               // Will be here
                               const Text(SectionD.SECTION_D_QUESTION_56_POINT_5,
                                   style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons([
-                                SectionD.SECTION_D_QUESTION_56_OPTION_1,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_2,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_3,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_4,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_5,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response56_5, setResponse56_5),
-                              const SizedBox(
-                                height: 10,
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse56_5(selectedList);
+                                },
                               ),
                             ],
                           ),
                         ),
-                        space,
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 10.0, right: 10.0, top: 25.0),
@@ -258,21 +237,15 @@ class _Screen30State extends State<Screen30> {
                               // Will be here
                               const Text(SectionD.SECTION_D_QUESTION_56_POINT_6,
                                   style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons([
-                                SectionD.SECTION_D_QUESTION_56_OPTION_1,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_2,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_3,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_4,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_5,
-                                SectionD.SECTION_D_QUESTION_56_OPTION_6,
-                              ], true, _response56_6, setResponse56_6),
-                              const SizedBox(
-                                height: 10,
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse56_6(selectedList);
+                                },
                               ),
                             ],
                           ),
                         ),
-                        space,
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -301,22 +274,22 @@ class _Screen30State extends State<Screen30> {
     setState(() {});
   }
 
-  void setResponse56_1(String value) async {
+  void setResponse56_1(List<String> value) async {
     // _response56 = value;
   }
-  void setResponse56_2(String value) async {
+  void setResponse56_2(List<String> value) async {
     // _response56 = value;
   }
-  void setResponse56_3(String value) async {
+  void setResponse56_3(List<String> value) async {
     // _response56 = value;
   }
-  void setResponse56_4(String value) async {
+  void setResponse56_4(List<String> value) async {
     // _response56 = value;
   }
-  void setResponse56_5(String value) async {
+  void setResponse56_5(List<String> value) async {
     // _response56 = value;
   }
-  void setResponse56_6(String value) async {
+  void setResponse56_6(List<String> value) async {
     // _response56 = value;
   }
 

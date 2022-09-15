@@ -26,7 +26,7 @@ class SectionD {
       "Spiritual/Symbolic value";
 
   static const String SECTION_D_QUESTION_56 =
-      "56. Are there formal rules to manage this forest? Who defines the rules? Are they well-defined?";
+      "56. Are there formal rules to manage this forest? Who defines rules to manage the forest?";
   static const String SECTION_D_QUESTION_56_POINT_1 =
       "(a). What forest products can be harvested?";
   static const String SECTION_D_QUESTION_56_POINT_2 =
@@ -37,7 +37,7 @@ class SectionD {
       "(d). Who can harvest forest products?";
   static const String SECTION_D_QUESTION_56_POINT_5 =
       "(e). Where can forest products be harvested?";
-  static const String SECTION_D_QUESTION_56_POINT_6 = "56 (f). Others";
+  static const String SECTION_D_QUESTION_56_POINT_6 = "Others";
   static const String SECTION_D_QUESTION_56_OPTION_1 = "Government Agency";
   static const String SECTION_D_QUESTION_56_OPTION_2 =
       "Formal Community Institution";
@@ -47,6 +47,7 @@ class SectionD {
   static const String SECTION_D_QUESTION_56_OPTION_5 =
       "Non-government Organization";
   static const String SECTION_D_QUESTION_56_OPTION_6 = "Religious Institution";
+  static const String SECTION_D_QUESTION_56_OPTION_7 = "No rules defined";
   static const String SECTION_D_QUESTION_57 =
       "57. Do rules restrict any of following?";
   static const String SECTION_D_QUESTION_57_OPTION_1 =
@@ -94,7 +95,7 @@ class SectionD {
   static const String SECTION_D_QUESTION_62_POINT_5 = "Sale: collective";
 
   static const String SECTION_D_QUESTION_63 =
-      "63. How are community members involved in the following governance activities";
+      "63. How are community members involved in the following governance activities?";
 
   static const String SECTION_D_QUESTION_63_PROPERTY_1 =
       "Almost all members participate";

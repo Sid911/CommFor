@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_d.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
-import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/home/home_page.dart';
 import 'package:ifri/ui/section_d/screen33.dart';
 import 'package:provider/provider.dart';
 
-// Q 66 67
 class Screen32 extends StatefulWidget {
   const Screen32({Key? key, required this.formName}) : super(key: key);
   final String formName;
@@ -19,9 +16,34 @@ class Screen32 extends StatefulWidget {
 
 class _Screen32State extends State<Screen32> {
   DatabaseReference? ref;
-  String screenName = "screen_36";
+  String screenName = "screen_35";
   bool isLoading = true;
-  final String _response61 = "";
+  final String _response60_1 = "";
+  final String _response60_2 = "";
+  final String _response60_3 = "";
+  final String _response60_4 = "";
+  final String _response60_5 = "";
+
+  TextEditingController question60Controller1 = TextEditingController();
+  TextEditingController question60Controller2 = TextEditingController();
+  TextEditingController question60Controller3 = TextEditingController();
+  TextEditingController question60Controller4 = TextEditingController();
+  TextEditingController question60Controller5 = TextEditingController();
+  TextEditingController question60Controller6 = TextEditingController();
+  TextEditingController question60Controller7 = TextEditingController();
+  TextEditingController question60Controller8 = TextEditingController();
+  TextEditingController question60Controller9 = TextEditingController();
+  TextEditingController question60Controller10 = TextEditingController();
+  TextEditingController question60Controller11 = TextEditingController();
+  TextEditingController question60Controller12 = TextEditingController();
+  TextEditingController question60Controller13 = TextEditingController();
+  TextEditingController question60Controller14 = TextEditingController();
+  TextEditingController question60Controller15 = TextEditingController();
+  TextEditingController question60Controller16 = TextEditingController();
+  TextEditingController question60Controller17 = TextEditingController();
+  TextEditingController question60Controller18 = TextEditingController();
+  TextEditingController question60Controller19 = TextEditingController();
+  TextEditingController question60Controller20 = TextEditingController();
 
   String? userId;
 
@@ -59,87 +81,226 @@ class _Screen32State extends State<Screen32> {
               padding: const EdgeInsets.only(
                   left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
               child: SingleChildScrollView(
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () => {navigateToPreviousScreen(context)},
-                            child: Image.asset(
-                              'assets/icons/ic_back.png',
-                              fit: BoxFit.cover,
-                              width: 20,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () => {navigateToPreviousScreen(context)},
+                          child: Image.asset(
+                            'assets/icons/ic_back.png',
+                            fit: BoxFit.cover,
+                            width: 20,
+                            height: 20,
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            SectionD.SECTION_D_SECTION_3,
+                            style: CustomStyle.screenTitle,
+                          ),
+                        ),
+                        Container(),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          child: const SizedBox(
                               height: 20,
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            child: const Text(
-                              SectionD.SECTION_D_SECTION_3,
-                              style: CustomStyle.screenTitle,
-                            ),
-                          ),
-                          Container(),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            alignment: Alignment.center,
-                            child: const SizedBox(
-                                height: 20,
-                                width: 300,
-                                child: Divider(color: Color(0xffD1D0BD))),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 10.0, right: 10.0, top: 25.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // The
-                                // Questions
-                                // Will be here
-                                const Text(SectionD.SECTION_D_QUESTION_61,
-                                    style: CustomStyle.questionTitle),
-                                CustomOption.optionRadioButtons([
-                                  'No rules exist',
-                                  'No one complies with the rules',
-                                  'Few users comply with the rules',
-                                  'About half the users comply with the rules',
-                                  'Most users comply with the rules',
-                                  'Almost all users fully comply with the rules'
-                                ], true, _response61, setResponse61),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                              ],
-                            ),
-                          ),
-                          space,
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                              width: 300,
+                              child: Divider(color: Color(0xffD1D0BD))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 10.0, right: 10.0, top: 25.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              InkWell(
-                                onTap: () => syncData(context),
-                                splashColor: Colors.lightBlue,
-                                borderRadius: BorderRadius.circular(2),
-                                child: CustomButton.nextButton,
+                              const Text(
+                                SectionD.SECTION_D_QUESTION_60,
+                                style: CustomStyle.questionTitle,
                               ),
+                              space,
+                              // 1st Row
+                              const Text(SectionD.SECTION_D_QUESTION_60_POINT_1,
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller1,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller2,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller3,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              // 1st Row End
+                              // 2nd Row
+                              const Text(SectionD.SECTION_D_QUESTION_60_POINT_2,
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller5,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller6,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller7,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              // 3rd Row
+                              const Text(
+                                  SectionD
+                                      .SECTION_D_QUESTION_60_POINT_3, // Only these change
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller:
+                                      question60Controller9, // Only these change
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller:
+                                      question60Controller10, // Only these change
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller:
+                                      question60Controller11, // Only these change
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              // 3rd Row End
+                              const Text(SectionD.SECTION_D_QUESTION_60_POINT_4,
+                                  style: CustomStyle.questionBoldTitle),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_1,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller13,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_2,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller14,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
+                              const Text(
+                                  SectionD.SECTION_D_QUESTION_60_PROPERTY_3,
+                                  style: CustomStyle.optionYesNo),
+                              space,
+                              TextField(
+                                  controller: question60Controller15,
+                                  style: CustomStyle.answer,
+                                  textAlign: TextAlign.start,
+                                  decoration:
+                                      CustomStyle.answerInputDecoration),
+                              space,
                             ],
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            InkWell(
+                              onTap: () => syncData(context),
+                              splashColor: Colors.lightBlue,
+                              borderRadius: BorderRadius.circular(2),
+                              child: CustomButton.nextButton,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -153,12 +314,24 @@ class _Screen32State extends State<Screen32> {
     setState(() {});
   }
 
-  void setResponse61(String value) async {
-    // _response61 = value;
-  }
-
   navigateToPreviousScreen(BuildContext context) {
     Navigator.of(context).pop();
+  }
+
+  void setResponse60_1(String value) async {
+    // _response61 = value;
+  }
+  void setResponse60_2(String value) async {
+    // _response61 = value;
+  }
+  void setResponse60_3(String value) async {
+    // _response61 = value;
+  }
+  void setResponse60_4(String value) async {
+    // _response61 = value;
+  }
+  void setResponse60_5(String value) async {
+    // _response61 = value;
   }
 
   void setData() async {

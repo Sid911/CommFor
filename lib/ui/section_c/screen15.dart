@@ -2,6 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_c.dart';
 import 'package:ifri/style/custom_button.dart';
+import 'package:ifri/style/custom_multi_select.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/section_c/screen16.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
@@ -19,11 +20,7 @@ class _Screen15State extends State<Screen15> {
   TextEditingController question22aController = TextEditingController();
   TextEditingController question22bController = TextEditingController();
   TextEditingController question23Controller = TextEditingController();
-  TextEditingController question24aController = TextEditingController();
-  TextEditingController question24bController = TextEditingController();
-  TextEditingController question24cController = TextEditingController();
-  TextEditingController question24dController = TextEditingController();
-
+  List<String> _response2 = [];
   String screenName = "screen_15";
   late FirebaseAuthService authService;
 
@@ -44,8 +41,18 @@ class _Screen15State extends State<Screen15> {
     setData();
   }
 
+  void setResponse2(List<String> value) async {
+    _response2 = value;
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<String> reportList = [
+      'Inward',
+      'Outward',
+      'Both',
+      'No Migration',
+    ];
     return SafeArea(
       child: Scaffold(
         body: ColoredBox(
@@ -151,55 +158,12 @@ class _Screen15State extends State<Screen15> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text("(1) Inward",
-                            style: CustomStyle.questionTitle),
-                        const SizedBox(
-                          height: 20,
+                        MultiSelectChip(
+                          reportList: reportList,
+                          onSelectionChanged: (selectedList) {
+                            setResponse2(selectedList);
+                          },
                         ),
-                        TextField(
-                            controller: question24aController,
-                            style: CustomStyle.answer,
-                            textAlign: TextAlign.start,
-                            decoration: CustomStyle.answerInputDecoration),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text("(2) Outward",
-                            style: CustomStyle.questionTitle),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextField(
-                            controller: question24bController,
-                            style: CustomStyle.answer,
-                            textAlign: TextAlign.start,
-                            decoration: CustomStyle.answerInputDecoration),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text("(3) Both",
-                            style: CustomStyle.questionTitle),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextField(
-                            controller: question24cController,
-                            style: CustomStyle.answer,
-                            textAlign: TextAlign.start,
-                            decoration: CustomStyle.answerInputDecoration),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text("(4) No migration",
-                            style: CustomStyle.questionTitle),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextField(
-                            controller: question24dController,
-                            style: CustomStyle.answer,
-                            textAlign: TextAlign.start,
-                            decoration: CustomStyle.answerInputDecoration),
                       ],
                     ),
                   ),
@@ -243,8 +207,8 @@ class _Screen15State extends State<Screen15> {
         .child("1")
         .child("response")
         .get();
-    question24aController.text =
-        null == response2.value ? "" : response2.value.toString();
+    // question24aController.text =
+    //     null == response2.value ? "" : response2.value.toString();
 
     final response3 = await ref!
         .child(screenName)
@@ -252,8 +216,8 @@ class _Screen15State extends State<Screen15> {
         .child("2")
         .child("response")
         .get();
-    question24bController.text =
-        null == response3.value ? "" : response3.value.toString();
+    // question24bController.text =
+    //     null == response3.value ? "" : response3.value.toString();
 
     final response4 = await ref!
         .child(screenName)
@@ -261,8 +225,8 @@ class _Screen15State extends State<Screen15> {
         .child("3")
         .child("response")
         .get();
-    question24cController.text =
-        null == response4.value ? "" : response4.value.toString();
+    // question24cController.text =
+    //     null == response4.value ? "" : response4.value.toString();
 
     final response5 = await ref!
         .child(screenName)
@@ -270,8 +234,8 @@ class _Screen15State extends State<Screen15> {
         .child("4")
         .child("response")
         .get();
-    question24dController.text =
-        null == response5.value ? "" : response5.value.toString();
+    // question24dController.text =
+    //     null == response5.value ? "" : response5.value.toString();
 
     final response6 = await ref!
         .child(screenName)
@@ -306,13 +270,13 @@ class _Screen15State extends State<Screen15> {
         },
         "question_24": {
           "question": SectionC.SECTION_C_QUESTION_24,
-          "1": {"title": "(1) Inward", "response": question24aController.text},
-          "2": {"title": "(2) Outward", "response": question24bController.text},
-          "3": {"title": "(3) Both ", "response": question24cController.text},
-          "4": {
-            "title": "(4) No migration ",
-            "response": question24dController.text
-          }
+          // "1": {"title": "(1) Inward", "response": question24aController.text},
+          // "2": {"title": "(2) Outward", "response": question24bController.text},
+          // "3": {"title": "(3) Both ", "response": question24cController.text},
+          // "4": {
+          //   "title": "(4) No migration ",
+          //   "response": question24dController.text
+          // }
         }
       }
     }).whenComplete(() => navigateToNextScreen(context));

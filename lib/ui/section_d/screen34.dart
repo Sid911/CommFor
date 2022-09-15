@@ -20,32 +20,26 @@ class _Screen34State extends State<Screen34> {
   DatabaseReference? ref;
   String screenName = "screen_34";
   bool isLoading = true;
-  final String _response62_1 = "";
-  final String _response62_2 = "";
-  final String _response62_3 = "";
-  final String _response62_4 = "";
-  final String _response62_5 = "";
-
-  TextEditingController question62Controller1 = TextEditingController();
-  TextEditingController question62Controller2 = TextEditingController();
-  TextEditingController question62Controller3 = TextEditingController();
-  TextEditingController question62Controller4 = TextEditingController();
-  TextEditingController question62Controller5 = TextEditingController();
-  TextEditingController question62Controller6 = TextEditingController();
-  TextEditingController question62Controller7 = TextEditingController();
-  TextEditingController question62Controller8 = TextEditingController();
-  TextEditingController question62Controller9 = TextEditingController();
-  TextEditingController question62Controller10 = TextEditingController();
-  TextEditingController question62Controller11 = TextEditingController();
-  TextEditingController question62Controller12 = TextEditingController();
-  TextEditingController question62Controller13 = TextEditingController();
-  TextEditingController question62Controller14 = TextEditingController();
-  TextEditingController question62Controller15 = TextEditingController();
-  TextEditingController question62Controller16 = TextEditingController();
-  TextEditingController question62Controller17 = TextEditingController();
-  TextEditingController question62Controller18 = TextEditingController();
-  TextEditingController question62Controller19 = TextEditingController();
-  TextEditingController question62Controller20 = TextEditingController();
+  String _response62_1_1 = "";
+  String _response62_1_2 = "";
+  String _response62_1_3 = "";
+  String _response62_1_4 = "";
+  String _response62_1_5 = "";
+  final String _response62_2_1 = "";
+  final String _response62_2_2 = "";
+  final String _response62_2_3 = "";
+  final String _response62_2_4 = "";
+  final String _response62_2_5 = "";
+  final String _response62_3_1 = "";
+  final String _response62_3_2 = "";
+  final String _response62_3_3 = "";
+  final String _response62_3_4 = "";
+  final String _response62_3_5 = "";
+  final String _response62_4_1 = "";
+  final String _response62_4_2 = "";
+  final String _response62_4_3 = "";
+  final String _response62_4_4 = "";
+  final String _response62_4_5 = "";
 
   String? userId;
 
@@ -124,310 +118,251 @@ class _Screen34State extends State<Screen34> {
                           padding: const EdgeInsets.only(
                               left: 10.0, right: 10.0, top: 25.0),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                SectionD.SECTION_D_QUESTION_62,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              space,
-                              // 1st Row
-                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_1,
-                                  style: CustomStyle.questionBoldTitle),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller1,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller2,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller3,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller4,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
-                                  style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons(const [
-                                '<10%',
-                                '10-30%',
-                                '30-50%',
-                                '>50%',
-                              ], true, _response62_1, setResponse62_1),
-                              space,
-                              // 1st Row End
-                              // 2nd Row
-                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_2,
-                                  style: CustomStyle.questionBoldTitle),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller5,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller6,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller7,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller8,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
-                                  style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons(const [
-                                '<10%',
-                                '10-30%',
-                                '30-50%',
-                                '>50%',
-                              ], true, _response62_2, setResponse62_2),
-                              space, // 2nd Row End
-                              // 3rd Row
-                              const Text(
-                                  SectionD
-                                      .SECTION_D_QUESTION_62_POINT_3, // Only these change
-                                  style: CustomStyle.questionBoldTitle),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller:
-                                      question62Controller9, // Only these change
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller:
-                                      question62Controller10, // Only these change
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller:
-                                      question62Controller11, // Only these change
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller12,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
-                                  style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons(const [
-                                '<10%',
-                                '10-30%',
-                                '30-50%',
-                                '>50%',
-                              ], true, _response62_3, setResponse62_3),
-                              space,
-                              // 3rd Row End
-                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_4,
-                                  style: CustomStyle.questionBoldTitle),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller13,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller14,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller15,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller16,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
-                                  style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons(const [
-                                '<10%',
-                                '10-30%',
-                                '30-50%',
-                                '>50%',
-                              ], true, _response62_4, setResponse62_4),
-                              space,
-
-                              const Text(SectionD.SECTION_D_QUESTION_62_POINT_5,
-                                  style: CustomStyle.questionBoldTitle),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller17,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller18,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller19,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
-                                  style: CustomStyle.optionYesNo),
-                              space,
-                              TextField(
-                                  controller: question62Controller20,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
-                                  style: CustomStyle.questionTitle),
-                              CustomOption.optionRadioButtons(const [
-                                '<10%',
-                                '10-30%',
-                                '30-50%',
-                                '>50%',
-                              ], true, _response62_5, setResponse62_5),
-                            ],
-                          ),
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  SectionD.SECTION_D_QUESTION_62,
+                                  style: CustomStyle.questionTitle,
+                                ),
+                                space,
+                                // 1st Row
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_POINT_1,
+                                    style: CustomStyle.questionBoldTitle),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_1, setResponse62_1_1),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_2, setResponse62_1_2),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_3, setResponse62_1_3),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_4, setResponse62_1_4),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                    style: CustomStyle.questionTitle),
+                                CustomOption.optionRadioButtons(const [
+                                  '<10%',
+                                  '10-30%',
+                                  '30-50%',
+                                  '>50%',
+                                ], true, _response62_1_5, setResponse62_1_5),
+                                space,
+                                // 1st Row
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_POINT_2,
+                                    style: CustomStyle.questionBoldTitle),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_1, setResponse62_1_1),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_2, setResponse62_1_2),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_3, setResponse62_1_3),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_4, setResponse62_1_4),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                    style: CustomStyle.questionTitle),
+                                CustomOption.optionRadioButtons(const [
+                                  '<10%',
+                                  '10-30%',
+                                  '30-50%',
+                                  '>50%',
+                                ], true, _response62_1_5, setResponse62_1_5),
+                                space,
+                                // 1st Row
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_POINT_3,
+                                    style: CustomStyle.questionBoldTitle),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_1, setResponse62_1_1),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_2, setResponse62_1_2),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_3, setResponse62_1_3),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_4, setResponse62_1_4),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                    style: CustomStyle.questionTitle),
+                                CustomOption.optionRadioButtons(const [
+                                  '<10%',
+                                  '10-30%',
+                                  '30-50%',
+                                  '>50%',
+                                ], true, _response62_1_5, setResponse62_1_5),
+                                space,
+                                // 1st Row
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_POINT_4,
+                                    style: CustomStyle.questionBoldTitle),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_1, setResponse62_1_1),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_2, setResponse62_1_2),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_3, setResponse62_1_3),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_4, setResponse62_1_4),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                    style: CustomStyle.questionTitle),
+                                CustomOption.optionRadioButtons(const [
+                                  '<10%',
+                                  '10-30%',
+                                  '30-50%',
+                                  '>50%',
+                                ], true, _response62_1_5, setResponse62_1_5),
+                                space,
+                                // 1st Row
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_POINT_5,
+                                    style: CustomStyle.questionBoldTitle),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_1,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_1, setResponse62_1_1),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_2,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_2, setResponse62_1_2),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_3,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_3, setResponse62_1_3),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_4,
+                                    style: CustomStyle.optionYesNo),
+                                CustomOption.optionRadioButtons(const [
+                                  'Yes',
+                                  'No',
+                                ], true, _response62_1_4, setResponse62_1_4),
+                                space,
+                                const Text(
+                                    SectionD.SECTION_D_QUESTION_62_PROPERTY_5,
+                                    style: CustomStyle.questionTitle),
+                                CustomOption.optionRadioButtons(const [
+                                  '<10%',
+                                  '10-30%',
+                                  '30-50%',
+                                  '>50%',
+                                ], true, _response62_1_5, setResponse62_1_5),
+                                space,
+                                // 1st Row End
+                                // 2nd Row
+                              ]),
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -461,9 +396,26 @@ class _Screen34State extends State<Screen34> {
     Navigator.of(context).pop();
   }
 
-  void setResponse62_1(String value) async {
-    // _response61 = value;
+  void setResponse62_1_1(String value) async {
+    _response62_1_1 = value;
   }
+
+  void setResponse62_1_2(String value) async {
+    _response62_1_2 = value;
+  }
+
+  void setResponse62_1_3(String value) async {
+    _response62_1_3 = value;
+  }
+
+  void setResponse62_1_4(String value) async {
+    _response62_1_4 = value;
+  }
+
+  void setResponse62_1_5(String value) async {
+    _response62_1_5 = value;
+  }
+
   void setResponse62_2(String value) async {
     // _response61 = value;
   }

@@ -5,7 +5,7 @@ import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:ifri/style/custom_button.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
-import 'package:ifri/ui/section_d/screen32.dart';
+import 'package:ifri/ui/section_d/screen33.dart';
 import 'package:provider/provider.dart';
 
 class Screen31 extends StatefulWidget {
@@ -290,7 +290,7 @@ class _Screen31State extends State<Screen31> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return Screen32(formName: widget.formName);
+          return Screen33(formName: widget.formName);
         },
       ),
     );

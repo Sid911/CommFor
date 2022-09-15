@@ -11,7 +11,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:ifri/ui/section_b/screen9.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ifri/services/auth_service/firebase_auth_impl.dart';
 import 'package:provider/provider.dart';
 
@@ -127,7 +126,8 @@ class _Screen8State extends State<Screen8> {
                           const SizedBox(
                             height: 15,
                           ),
-                          const Text("Bot. Name", style: CustomStyle.form),
+                          const Text("Scientific Name",
+                              style: CustomStyle.form),
                           const SizedBox(
                             height: 15,
                           ),
@@ -324,7 +324,7 @@ class _Screen8State extends State<Screen8> {
     final pickedImage = await picker.getImage(
         source: ImageSource.gallery, maxWidth: 1000, imageQuality: 75);
     final pickedImageFile = File(pickedImage!.path);
-    print("Path : " + pickedImage.path);
+    print("Path : ${pickedImage.path}");
 
     final metadata = SettableMetadata(contentType: "image/jpeg");
 

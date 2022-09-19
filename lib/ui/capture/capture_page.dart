@@ -193,11 +193,12 @@ class _CapturePageState extends State<CapturePage> {
       isUploading = progress == 1 ? false : true;
       uploadProgress = progress;
     });
-    if (progress == 1)
+    if (progress == 1) {
       Fluttertoast.showToast(
         msg: "Upload File Complete",
         toastLength: Toast.LENGTH_LONG,
       );
+    }
   }
 
   Future<PlatformFile?> selectFile() async {

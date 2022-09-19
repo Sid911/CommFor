@@ -18,7 +18,8 @@ class Screen1 extends StatefulWidget {
 class _Screen1State extends State<Screen1> {
   DatabaseReference? ref;
   TextEditingController question1Controller = TextEditingController();
-  TextEditingController question2Controller = TextEditingController();
+  List<TextEditingController> question2Controller = [];
+  List<Container> textFields = [];
   String screenName = "screen_1";
   String? userId;
 
@@ -29,6 +30,8 @@ class _Screen1State extends State<Screen1> {
     super.initState();
     authService = context.read<FirebaseAuthService>();
     initialize();
+    question2Controller.add(TextEditingController());
+    textFields.add(_buildTextField());
   }
 
   void initialize() async {
@@ -39,15 +42,52 @@ class _Screen1State extends State<Screen1> {
     setData();
   }
 
+  Container _buildTextField() {
+    // return a container with textfield and a button to add another textfireld
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+                controller: question2Controller.last,
+                style: CustomStyle.answer,
+                textAlign: TextAlign.start,
+                decoration: CustomStyle.answerInputDecoration),
+          ),
+          IconButton(
+            onPressed: () {
+              setState(() {
+                question2Controller.add(TextEditingController());
+                textFields.add(_buildTextField());
+              });
+            },
+            icon: const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+    // return TextField(
+    //     controller: question2Controller,
+    //     style: CustomStyle.answer,
+    //     textAlign: TextAlign.start,
+    //     decoration: CustomStyle.answerInputDecoration);
+  }
+
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        body: ColoredBox(
-          color: const Color(0xFF12160F),
-          child: Padding(
-            padding: const EdgeInsets.only(
-                left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+        backgroundColor: const Color(0xFF12160F),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          padding: const EdgeInsets.only(
+              left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,11 +157,15 @@ class _Screen1State extends State<Screen1> {
                       const SizedBox(
                         height: 20,
                       ),
-                      TextField(
-                          controller: question2Controller,
-                          style: CustomStyle.answer,
-                          textAlign: TextAlign.start,
-                          decoration: CustomStyle.answerInputDecoration),
+                      ListView(
+                        shrinkWrap: true,
+                        children: textFields,
+                      )
+                      // TextField(
+                      //     controller: question2Controller,
+                      //     style: CustomStyle.answer,
+                      //     textAlign: TextAlign.start,
+                      //     decoration: CustomStyle.answerInputDecoration),
                     ],
                   ),
                 ),
@@ -160,8 +204,10 @@ class _Screen1State extends State<Screen1> {
         .child("question_2")
         .child("response")
         .get();
-    question2Controller.text =
+    question2Controller[0].text =
         null == response2.value ? "" : response2.value.toString();
+    // question2Controller.text =
+    //     null == response2.value ? "" : response2.value.toString();
   }
 
   void syncData(BuildContext context) async {
@@ -173,7 +219,7 @@ class _Screen1State extends State<Screen1> {
         },
         "question_2": {
           "question": SectionB.SECTION_B_QUESTION_2,
-          "response": question2Controller.text
+          "response": question2Controller[0].text
         }
       }
     }).whenComplete(() => navigateToNextScreen(context));

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_c.dart';
 import 'package:ifri/style/custom_button.dart';
+import 'package:ifri/style/custom_multi_select.dart';
 import 'package:ifri/style/custom_option.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -18,7 +19,8 @@ class Screen28 extends StatefulWidget {
 class _Screen28State extends State<Screen28> {
   DatabaseReference? ref;
   String screenName = "screen_28";
-  String _response3 = "", _response4 = "";
+  List<String> _response3 = [];
+  String _response4 = "";
   bool isLoading = true;
   late FirebaseAuthService authService;
 
@@ -37,7 +39,7 @@ class _Screen28State extends State<Screen28> {
     setData();
   }
 
-  void setResponse3(String value) async {
+  void setResponse3(List<String> value) async {
     _response3 = value;
   }
 
@@ -47,6 +49,15 @@ class _Screen28State extends State<Screen28> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> reportList = [
+      'Grievance',
+      'Development',
+      'Land rights',
+      'Dispute/conflict resolution',
+      'Private benefits and schemes',
+      'Banking and credit',
+      'Others',
+    ];
     if (isLoading) {
       return Container();
     } else {
@@ -121,15 +132,12 @@ class _Screen28State extends State<Screen28> {
                               const SizedBox(
                                 height: 5,
                               ),
-                              CustomOption.optionRadioButtons(const [
-                                'Grievance',
-                                'Development',
-                                'Land rights',
-                                'Dispute/conflict resolution',
-                                'Private benefits and schemes',
-                                'Banking and credit',
-                                'Others',
-                              ], true, _response3, setResponse3),
+                              MultiSelectChip(
+                                reportList: reportList,
+                                onSelectionChanged: (selectedList) {
+                                  setResponse3(selectedList);
+                                },
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -195,7 +203,7 @@ class _Screen28State extends State<Screen28> {
         .get();
 
     setState(() {
-      _response3 = null == res3.value ? "" : res3.value.toString();
+      // _response3 = null == res3.value ? "" : res3.value.toString();
       _response4 = null == res4.value ? "" : res4.value.toString();
       isLoading = false;
     });

@@ -23,6 +23,12 @@ class _Screen10State extends State<Screen10> {
   String? userId;
 
   late FirebaseAuthService authService;
+  TextEditingController response3Controller = TextEditingController();
+  TextEditingController response8Controller = TextEditingController();
+  TextEditingController response13Controller = TextEditingController();
+  TextEditingController response18Controller = TextEditingController();
+  TextEditingController response23Controller = TextEditingController();
+  TextEditingController response28Controller = TextEditingController();
 
   @override
   void initState() {
@@ -160,13 +166,42 @@ class _Screen10State extends State<Screen10> {
                             Row(
                               children: [
                                 const SizedBox(
-                                  width: 125,
+                                  width: 130,
                                   height: 50,
-                                  child: Text("Price per unit",
-                                      style: CustomStyle.answer),
+                                  child: Text(
+                                    "Price per unit",
+                                    style: CustomStyle.answer,
+                                  ),
                                 ),
-                                CustomOption.yesNoButtons(
-                                    3, response[3], setResponse),
+                                // Textfield
+                                SizedBox(
+                                  width: 125,
+                                  height: 30,
+                                  child: TextField(
+                                    controller: response3Controller,
+                                    style: CustomStyle.form,
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.start,
+                                    decoration: const InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                        // top: 5.0,
+                                        // bottom: 5.0,
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -246,13 +281,42 @@ class _Screen10State extends State<Screen10> {
                             Row(
                               children: [
                                 const SizedBox(
-                                  width: 125,
+                                  width: 130,
                                   height: 50,
-                                  child: Text("Price per unit",
-                                      style: CustomStyle.answer),
+                                  child: Text(
+                                    "Price per unit",
+                                    style: CustomStyle.answer,
+                                  ),
                                 ),
-                                CustomOption.yesNoButtons(
-                                    8, response[8], setResponse),
+                                // Textfield
+                                SizedBox(
+                                  width: 125,
+                                  height: 30,
+                                  child: TextField(
+                                    controller: response8Controller,
+                                    style: CustomStyle.form,
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.start,
+                                    decoration: const InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                        // top: 5.0,
+                                        // bottom: 5.0,
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -332,13 +396,42 @@ class _Screen10State extends State<Screen10> {
                             Row(
                               children: [
                                 const SizedBox(
-                                  width: 125,
+                                  width: 130,
                                   height: 50,
-                                  child: Text("Price per unit",
-                                      style: CustomStyle.answer),
+                                  child: Text(
+                                    "Price per unit",
+                                    style: CustomStyle.answer,
+                                  ),
                                 ),
-                                CustomOption.yesNoButtons(
-                                    13, response[13], setResponse),
+                                // Textfield
+                                SizedBox(
+                                  width: 125,
+                                  height: 30,
+                                  child: TextField(
+                                    controller: response13Controller,
+                                    style: CustomStyle.form,
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.start,
+                                    decoration: const InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                        // top: 5.0,
+                                        // bottom: 5.0,
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -419,13 +512,42 @@ class _Screen10State extends State<Screen10> {
                             Row(
                               children: [
                                 const SizedBox(
-                                  width: 125,
+                                  width: 130,
                                   height: 50,
-                                  child: Text("Price per unit",
-                                      style: CustomStyle.answer),
+                                  child: Text(
+                                    "Price per unit",
+                                    style: CustomStyle.answer,
+                                  ),
                                 ),
-                                CustomOption.yesNoButtons(
-                                    18, response[18], setResponse),
+                                // Textfield
+                                SizedBox(
+                                  width: 125,
+                                  height: 30,
+                                  child: TextField(
+                                    controller: response18Controller,
+                                    style: CustomStyle.form,
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.start,
+                                    decoration: const InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                        // top: 5.0,
+                                        // bottom: 5.0,
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -505,13 +627,42 @@ class _Screen10State extends State<Screen10> {
                             Row(
                               children: [
                                 const SizedBox(
-                                  width: 125,
+                                  width: 130,
                                   height: 50,
-                                  child: Text("Price per unit",
-                                      style: CustomStyle.answer),
+                                  child: Text(
+                                    "Price per unit",
+                                    style: CustomStyle.answer,
+                                  ),
                                 ),
-                                CustomOption.yesNoButtons(
-                                    23, response[23], setResponse),
+                                // Textfield
+                                SizedBox(
+                                  width: 125,
+                                  height: 30,
+                                  child: TextField(
+                                    controller: response23Controller,
+                                    style: CustomStyle.form,
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.start,
+                                    decoration: const InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                        // top: 5.0,
+                                        // bottom: 5.0,
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -591,13 +742,42 @@ class _Screen10State extends State<Screen10> {
                             Row(
                               children: [
                                 const SizedBox(
-                                  width: 125,
+                                  width: 130,
                                   height: 50,
-                                  child: Text("Price per unit",
-                                      style: CustomStyle.answer),
+                                  child: Text(
+                                    "Price per unit",
+                                    style: CustomStyle.answer,
+                                  ),
                                 ),
-                                CustomOption.yesNoButtons(
-                                    28, response[28], setResponse),
+                                // Textfield
+                                SizedBox(
+                                  width: 125,
+                                  height: 30,
+                                  child: TextField(
+                                    controller: response28Controller,
+                                    style: CustomStyle.form,
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.start,
+                                    decoration: const InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xffD1D0BD),
+                                            width: 1.0),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                        // top: 5.0,
+                                        // bottom: 5.0,
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -727,42 +907,42 @@ class _Screen10State extends State<Screen10> {
             "timber": {
               "self_consumption": response[1],
               "market_sale": response[2],
-              "price": response[3],
+              // "price": response[3],
               "collection": response[4],
               "harvesting": response[5]
             },
             "fuelwood": {
               "self_consumption": response[6],
               "market_sale": response[7],
-              "price": response[8],
+              // "price": response[8],
               "collection": response[9],
               "harvesting": response[10]
             },
             "grazing": {
               "self_consumption": response[11],
               "market_sale": response[12],
-              "price": response[13],
+              // "price": response[13],
               "collection": response[14],
               "harvesting": response[15]
             },
             "seasonal_forest_products": {
               "self_consumption": response[16],
               "market_sale": response[17],
-              "price": response[18],
+              // "price": response[18],
               "collection": response[19],
               "harvesting": response[20]
             },
             "wildlife": {
               "self_consumption": response[21],
               "market_sale": response[22],
-              "price": response[23],
+              // "price": response[23],
               "collection": response[24],
               "harvesting": response[25]
             },
             "other": {
               "self_consumption": response[26],
               "market_sale": response[27],
-              "price": response[28],
+              // "price": response[28],
               "collection": response[29],
               "harvesting": response[30]
             }

@@ -18,31 +18,20 @@ class Screen29 extends StatefulWidget {
 class _Screen29State extends State<Screen29> {
   DatabaseReference? ref;
   String screenName = "screen_29";
+  String _response0 = "";
+  String _response1 = "";
+  String _response2 = "";
   String _response3 = "";
-  bool isLoading = true;
+  String _response4 = "";
+  String _response5 = "";
+  String _response6 = "";
+  String _response7 = "";
+  String _response8 = "";
+  final String _response9 = "";
+  final String _response10 = "";
+  final String _response11 = "";
 
-  TextEditingController question55Controller1 = TextEditingController();
-  TextEditingController question55Controller2 = TextEditingController();
-  TextEditingController question55Controller3 = TextEditingController();
-  TextEditingController question55Controller4 = TextEditingController();
-  TextEditingController question55Controller5 = TextEditingController();
-  TextEditingController question55Controller6 = TextEditingController();
-  TextEditingController question55Controller7 = TextEditingController();
-  TextEditingController question55Controller8 = TextEditingController();
-  TextEditingController question55Controller9 = TextEditingController();
-  TextEditingController question55Controller10 = TextEditingController();
-  TextEditingController question55Controller11 = TextEditingController();
-  TextEditingController question55Controller12 = TextEditingController();
-  TextEditingController question55Controller13 = TextEditingController();
-  TextEditingController question55Controller14 = TextEditingController();
-  TextEditingController question55Controller15 = TextEditingController();
-  TextEditingController question55Controller16 = TextEditingController();
-  TextEditingController question55Controller17 = TextEditingController();
-  TextEditingController question55Controller18 = TextEditingController();
-  TextEditingController question55Controller19 = TextEditingController();
-  TextEditingController question55Controller20 = TextEditingController();
-  TextEditingController question55Controller21 = TextEditingController();
-  TextEditingController question55Controller22 = TextEditingController();
+  bool isLoading = true;
 
   late FirebaseAuthService authService;
 
@@ -61,12 +50,60 @@ class _Screen29State extends State<Screen29> {
     setData();
   }
 
+  void setResponse0(String value) async {
+    _response0 = value;
+  }
+
+  void setResponse1(String value) async {
+    _response1 = value;
+  }
+
+  void setResponse2(String value) async {
+    _response2 = value;
+  }
+
   void setResponse3(String value) async {
     _response3 = value;
   }
 
+  void setResponse4(String value) async {
+    _response4 = value;
+  }
+
+  void setResponse5(String value) async {
+    _response5 = value;
+  }
+
+  void setResponse6(String value) async {
+    _response6 = value;
+  }
+
+  void setResponse7(String value) async {
+    _response7 = value;
+  }
+
+  void setResponse8(String value) async {
+    _response8 = value;
+  }
+
+  void setResponse9(String value) async {
+    _response8 = value;
+  }
+
+  void setResponse10(String value) async {
+    _response8 = value;
+  }
+
+  void setResponse11(String value) async {
+    _response8 = value;
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<String> reportList = [
+      SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
+      SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
+    ];
     if (isLoading) {
       return Container();
     } else {
@@ -150,7 +187,7 @@ class _Screen29State extends State<Screen29> {
                                 'Co-management – Community and NGO',
                                 'Co-management – Community and Private company',
                                 'Others',
-                              ], true, _response3, setResponse3),
+                              ], true, _response0, setResponse0),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -180,33 +217,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller1,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller2,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response1, setResponse1),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -215,33 +227,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller3,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller4,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response2, setResponse2),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -250,33 +237,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller5,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller6,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response3, setResponse3),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -285,33 +247,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller7,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller8,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response4, setResponse4),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -320,33 +257,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller9,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller10,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response5, setResponse5),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -355,33 +267,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller11,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller12,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response6, setResponse6),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -390,33 +277,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller13,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller14,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response7, setResponse7),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -425,33 +287,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller15,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller16,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response8, setResponse8),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -460,33 +297,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller15,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller16,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response9, setResponse9),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -496,33 +308,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller15,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller16,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response10, setResponse10),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -532,33 +319,8 @@ class _Screen29State extends State<Screen29> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_1,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller15,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                  SectionD.SECTION_D_QUESTION_55_PROPERTY_2,
-                                  style: CustomStyle.optionYesNo),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextField(
-                                  controller: question55Controller16,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
+                              CustomOption.optionRadioButtons(
+                                  reportList, true, _response11, setResponse11),
                             ],
                           ),
                         ),
@@ -605,97 +367,97 @@ class _Screen29State extends State<Screen29> {
         .get()
         .then((snapshot) {
       if (snapshot.exists) {
-        Map<dynamic, dynamic> values = snapshot.value as Map<dynamic, dynamic>;
-        values.forEach((key, value) {
-          int p = -1;
-          if (SectionD.SECTION_D_QUESTION_55_POINT_1 == key) {
-            p = 0;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_2 == key) {
-            p = 1;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_3 == key) {
-            p = 2;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_4 == key) {
-            p = 3;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_5 == key) {
-            p = 4;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_6 == key) {
-            p = 5;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_7 == key) {
-            p = 6;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_8 == key) {
-            p = 7;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_9 == key) {
-            p = 8;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_10 == key) {
-            p = 9;
-          } else if (SectionD.SECTION_D_QUESTION_55_POINT_11 == key) {
-            p = 11;
-          }
-          Map<dynamic, dynamic> valuesRes = value as Map<dynamic, dynamic>;
-          valuesRes.forEach((key1, value1) {
-            int c = -1;
-            if (SectionD.SECTION_D_QUESTION_55_PROPERTY_1 == key1) {
-              c = 1;
-            } else if (SectionD.SECTION_D_QUESTION_55_PROPERTY_2 == key1) {
-              c = 2;
-            }
+        // Map<dynamic, dynamic> values = snapshot.value as Map<dynamic, dynamic>;
+        // values.forEach((key, value) {
+        //   int p = -1;
+        //   if (SectionD.SECTION_D_QUESTION_55_POINT_1 == key) {
+        //     p = 0;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_2 == key) {
+        //     p = 1;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_3 == key) {
+        //     p = 2;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_4 == key) {
+        //     p = 3;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_5 == key) {
+        //     p = 4;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_6 == key) {
+        //     p = 5;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_7 == key) {
+        //     p = 6;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_8 == key) {
+        //     p = 7;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_9 == key) {
+        //     p = 8;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_10 == key) {
+        //     p = 9;
+        //   } else if (SectionD.SECTION_D_QUESTION_55_POINT_11 == key) {
+        //     p = 11;
+        //   }
+        //   Map<dynamic, dynamic> valuesRes = value as Map<dynamic, dynamic>;
+        //   valuesRes.forEach((key1, value1) {
+        //     int c = -1;
+        //     if (SectionD.SECTION_D_QUESTION_55_PROPERTY_1 == key1) {
+        //       c = 1;
+        //     } else if (SectionD.SECTION_D_QUESTION_55_PROPERTY_2 == key1) {
+        //       c = 2;
+        //     }
 
-            if (p > -1 && c > 0) {
-              int position = (p * 2) + c;
-              if (position == 1) {
-                question55Controller1.text = value1;
-              } else if (position == 2) {
-                question55Controller2.text = value1;
-              } else if (position == 3) {
-                question55Controller3.text = value1;
-              } else if (position == 4) {
-                question55Controller4.text = value1;
-              } else if (position == 5) {
-                question55Controller5.text = value1;
-              } else if (position == 6) {
-                question55Controller6.text = value1;
-              } else if (position == 7) {
-                question55Controller7.text = value1;
-              } else if (position == 8) {
-                question55Controller8.text = value1;
-              } else if (position == 9) {
-                question55Controller9.text = value1;
-              } else if (position == 10) {
-                question55Controller10.text = value1;
-              } else if (position == 11) {
-                question55Controller11.text = value1;
-              } else if (position == 12) {
-                question55Controller12.text = value1;
-              } else if (position == 13) {
-                question55Controller13.text = value1;
-              } else if (position == 14) {
-                question55Controller14.text = value1;
-              } else if (position == 15) {
-                question55Controller15.text = value1;
-              } else if (position == 16) {
-                question55Controller16.text = value1;
-              } else if (position == 17) {
-                question55Controller17.text = value1;
-              } else if (position == 18) {
-                question55Controller18.text = value1;
-              } else if (position == 19) {
-                question55Controller19.text = value1;
-              } else if (position == 20) {
-                question55Controller20.text = value1;
-              } else if (position == 21) {
-                question55Controller21.text = value1;
-              } else if (position == 22) {
-                question55Controller22.text = value1;
-              }
-            }
-          });
-        });
+        //     if (p > -1 && c > 0) {
+        //       int position = (p * 2) + c;
+        //       if (position == 1) {
+        //         question55Controller1.text = value1;
+        //       } else if (position == 2) {
+        //         question55Controller2.text = value1;
+        //       } else if (position == 3) {
+        //         question55Controller3.text = value1;
+        //       } else if (position == 4) {
+        //         question55Controller4.text = value1;
+        //       } else if (position == 5) {
+        //         question55Controller5.text = value1;
+        //       } else if (position == 6) {
+        //         question55Controller6.text = value1;
+        //       } else if (position == 7) {
+        //         question55Controller7.text = value1;
+        //       } else if (position == 8) {
+        //         question55Controller8.text = value1;
+        //       } else if (position == 9) {
+        //         question55Controller9.text = value1;
+        //       } else if (position == 10) {
+        //         question55Controller10.text = value1;
+        //       } else if (position == 11) {
+        //         question55Controller11.text = value1;
+        //       } else if (position == 12) {
+        //         question55Controller12.text = value1;
+        //       } else if (position == 13) {
+        //         question55Controller13.text = value1;
+        //       } else if (position == 14) {
+        //         question55Controller14.text = value1;
+        //       } else if (position == 15) {
+        //         question55Controller15.text = value1;
+        //       } else if (position == 16) {
+        //         question55Controller16.text = value1;
+        //       } else if (position == 17) {
+        //         question55Controller17.text = value1;
+        //       } else if (position == 18) {
+        //         question55Controller18.text = value1;
+        //       } else if (position == 19) {
+        //         question55Controller19.text = value1;
+        //       } else if (position == 20) {
+        //         question55Controller20.text = value1;
+        //       } else if (position == 21) {
+        //         question55Controller21.text = value1;
+        //       } else if (position == 22) {
+        //         question55Controller22.text = value1;
+        //       }
+        //     }
+        //   });
+        // });
       } else {
         print('No data available');
       }
     });
     setState(() {
-      _response3 = null == res3.value ? "" : res3.value.toString();
+      _response0 = null == res3.value ? "" : res3.value.toString();
       isLoading = false;
     });
   }
@@ -705,59 +467,59 @@ class _Screen29State extends State<Screen29> {
       screenName: {
         "question_54": {
           "question": SectionD.SECTION_D_QUESTION_54,
-          "response": _response3
+          "response": _response0
         },
         "question_55": {
           "question": SectionD.SECTION_D_QUESTION_55,
           "response": {
-            SectionD.SECTION_D_QUESTION_55_POINT_1: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller1.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller2.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_2: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller3.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller4.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_3: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller5.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller6.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_4: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller7.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller8.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_5: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller9.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller10.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_6: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller11.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller12.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_7: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller13.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller14.text
-            },
-            SectionD.SECTION_D_QUESTION_55_POINT_8: {
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
-                  question55Controller15.text,
-              SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
-                  question55Controller16.text
-            }
+            //   SectionD.SECTION_D_QUESTION_55_POINT_1: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller1.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller2.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_2: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller3.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller4.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_3: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller5.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller6.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_4: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller7.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller8.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_5: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller9.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller10.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_6: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller11.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller12.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_7: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller13.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller14.text
+            //   },
+            //   SectionD.SECTION_D_QUESTION_55_POINT_8: {
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_1:
+            //         question55Controller15.text,
+            //     SectionD.SECTION_D_QUESTION_55_PROPERTY_2:
+            //         question55Controller16.text
+            //   }
           }
         },
       }

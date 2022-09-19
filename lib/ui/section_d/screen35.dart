@@ -8,7 +8,7 @@ import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/section_d/screen36.dart';
 import 'package:provider/provider.dart';
 
-// Q 64 65
+// Q 66 67
 class Screen35 extends StatefulWidget {
   const Screen35({Key? key, required this.formName}) : super(key: key);
   final String formName;
@@ -20,12 +20,11 @@ class _Screen35State extends State<Screen35> {
   DatabaseReference? ref;
   String screenName = "screen_35";
   bool isLoading = true;
-  String response64B = '';
-  String response65 = '';
-  String response66 = '';
-  String response67 = '';
-  TextEditingController question64Controller1 = TextEditingController();
-  TextEditingController question64Controller2 = TextEditingController();
+  final String _response63_1 = "";
+  final String _response63_2 = "";
+  final String _response63_3 = "";
+  final String _response63_4 = "";
+  final String _response63_5 = "";
 
   String? userId;
 
@@ -49,6 +48,12 @@ class _Screen35State extends State<Screen35> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> reportList = [
+      SectionD.SECTION_D_QUESTION_63_PROPERTY_1,
+      SectionD.SECTION_D_QUESTION_63_PROPERTY_2,
+      SectionD.SECTION_D_QUESTION_63_PROPERTY_3,
+      SectionD.SECTION_D_QUESTION_63_PROPERTY_4,
+    ];
     if (isLoading) {
       return Container();
     } else {
@@ -84,7 +89,7 @@ class _Screen35State extends State<Screen35> {
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           child: const Text(
-                            SectionD.SECTION_D_SECTION_4,
+                            SectionD.SECTION_D_SECTION_3,
                             style: CustomStyle.screenTitle,
                           ),
                         ),
@@ -106,96 +111,37 @@ class _Screen35State extends State<Screen35> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(SectionD.SECTION_D_QUESTION_64_A,
-                                  style: CustomStyle.questionTitle),
+                              const Text(
+                                SectionD.SECTION_D_QUESTION_63,
+                                style: CustomStyle.questionTitle,
+                              ),
                               space,
-                              const Text("Men",
+                              // 1st Row
+                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_1,
                                   style: CustomStyle.questionBoldTitle),
-                              space,
-                              TextField(
-                                  controller: question64Controller1,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              const Text("Women",
+                              CustomOption.optionRadioButtons(reportList, true,
+                                  _response63_1, setResponse63_1),
+                              // 1st Row End
+                              // 2nd Row
+                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_2,
                                   style: CustomStyle.questionBoldTitle),
-                              space,
-                              TextField(
-                                  controller: question64Controller2,
-                                  style: CustomStyle.answer,
-                                  textAlign: TextAlign.start,
-                                  decoration:
-                                      CustomStyle.answerInputDecoration),
-                              space,
-                              space,
+                              CustomOption.optionRadioButtons(reportList, true,
+                                  _response63_2, setResponse63_2),
+                              // 3rd Row
                               const Text(
-                                SectionD.SECTION_D_QUESTION_64_B,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              space,
-                              CustomOption.optionRadioButtons(
-                                ['Male', 'Female'],
-                                false,
-                                'Male',
-                                setResponse64b,
-                              ),
-                              space,
-                              space,
-                              const Text(
-                                SectionD.SECTION_D_QUESTION_65,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              space,
-                              CustomOption.optionRadioButtons(
-                                ['Yes', 'No'],
-                                false,
-                                'Yes',
-                                setResponse65,
-                              ),
-                              space,
-                              space,
-                              const Text(
-                                SectionD.SECTION_D_QUESTION_66,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              CustomOption.optionRadioButtons(
-                                [
-                                  'Once a day',
-                                  'Multiple times in a week',
-                                  'Once a week',
-                                  'Once in two weeks',
-                                  'Once in a month',
-                                  'Once in three months',
-                                  'Once in six months',
-                                  'Once in a year',
-                                  'Never'
-                                ],
-                                true,
-                                'Once a day',
-                                setResponse66,
-                              ),
-                              const Text(
-                                SectionD.SECTION_D_QUESTION_67,
-                                style: CustomStyle.questionTitle,
-                              ),
-                              space,
-                              CustomOption.optionRadioButtons(
-                                [
-                                  '<10 percent participate',
-                                  '10-30 percent participate',
-                                  '30-50 percent participate',
-                                  '>50 percent participate'
-                                ],
-                                true,
-                                '<10 percent participate',
-                                setResponse67,
-                              ),
+                                  SectionD
+                                      .SECTION_D_QUESTION_63_POINT_3, // Only these change
+                                  style: CustomStyle.questionBoldTitle),
+                              CustomOption.optionRadioButtons(reportList, true,
+                                  _response63_3, setResponse63_3),
+                              // 3rd Row End
+                              const Text(SectionD.SECTION_D_QUESTION_63_POINT_4,
+                                  style: CustomStyle.questionBoldTitle),
+                              CustomOption.optionRadioButtons(reportList, true,
+                                  _response63_4, setResponse63_4),
                             ],
                           ),
                         ),
-                        space,
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -204,7 +150,7 @@ class _Screen35State extends State<Screen35> {
                               onTap: () => syncData(context),
                               splashColor: Colors.lightBlue,
                               borderRadius: BorderRadius.circular(2),
-                              child: CustomButton.submitButton,
+                              child: CustomButton.nextButton,
                             ),
                           ],
                         ),
@@ -220,53 +166,50 @@ class _Screen35State extends State<Screen35> {
     }
   }
 
-  void setResponse64b(String val) {
-    setState(() {
-      response64B = val;
-    });
-  }
-
-  void setResponse65(String val) {
-    setState(() {
-      response65 = val;
-    });
-  }
-
-  void setResponse66(String val) {
-    setState(() {
-      response66 = val;
-    });
-  }
-
-  void setResponse67(String val) {
-    setState(() {
-      response67 = val;
-    });
+  void setResponse(String val) {
+    setState(() {});
   }
 
   navigateToPreviousScreen(BuildContext context) {
     Navigator.of(context).pop();
   }
 
+  void setResponse63_1(String value) async {
+    // _response61 = value;
+  }
+  void setResponse63_2(String value) async {
+    // _response61 = value;
+  }
+  void setResponse63_3(String value) async {
+    // _response61 = value;
+  }
+  void setResponse63_4(String value) async {
+    // _response61 = value;
+  }
+  void setResponse63_5(String value) async {
+    // _response61 = value;
+  }
+
   void setData() async {
-    var res = await ref!
-        .child(screenName)
-        .child("question_64_A")
-        .child("response")
-        .get();
-    if (res.exists) {
-      final values = res.value! as Map<dynamic, dynamic>;
-      question64Controller1.text = values["Men"];
-      question64Controller2.text = values["Women"];
-    }
-    res = await ref!
-        .child(screenName)
-        .child('question_64_B')
-        .child("response")
-        .get();
-    if (res.exists) {
-      setResponse64b(res.value! as String);
-    }
+    // Set the data at the starting
+    // var res = await ref!
+    //     .child(screenName)
+    //     .child("question_64_A")
+    //     .child("response")
+    //     .get();
+    // if (res.exists) {
+    //   final values = res.value! as Map<dynamic, dynamic>;
+    //   question64Controller1.text = values["Men"];
+    //   question64Controller2.text = values["Women"];
+    // }
+    // res = await ref!
+    //     .child(screenName)
+    //     .child('question_64_B')
+    //     .child("response")
+    //     .get();
+    // if (res.exists) {
+    //   setResponse(res.value! as String);
+    // }
     setState(() {
       isLoading = false;
     });
@@ -275,17 +218,19 @@ class _Screen35State extends State<Screen35> {
   void syncData(BuildContext context) async {
     await ref!.update({
       screenName: {
-        "question_64_A": {
-          "question": SectionD.SECTION_D_QUESTION_64_A,
-          "response": {
-            "Men": question64Controller1.text.trim(),
-            "Women": question64Controller2.text.trim(),
-          }
-        },
-        "question_64_B": {
-          "question": SectionD.SECTION_D_QUESTION_64_B,
-          "response": response64B
-        }
+        // Set questions that run on submit button
+        //
+        // "question_64_A": {
+        //   "question": SectionD.SECTION_D_QUESTION_64_A,
+        //   "response": {
+        //     "Men": question64Controller1.text.trim(),
+        //     "Women": question64Controller2.text.trim(),
+        //   }
+        // },
+        // "question_64_B": {
+        //   "question": SectionD.SECTION_D_QUESTION_64_B,
+        //   "response": response64B
+        // }
       }
     }).whenComplete(() => navigateToNextScreen(context));
   }

@@ -21,7 +21,7 @@ class _Screen21State extends State<Screen21> {
   bool isLoading = true;
   Map<int, String> response = {};
   late FirebaseAuthService authService;
-
+  TextEditingController question40Controller = TextEditingController();
   String? userId;
 
   @override
@@ -124,7 +124,7 @@ class _Screen21State extends State<Screen21> {
                         physics: const BouncingScrollPhysics(),
                         child: Row(children: [
                           const SizedBox(
-                              width: 75,
+                              width: 90,
                               child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_1,
                                   style: CustomStyle.answer)),
                           const SizedBox(width: 2),
@@ -215,7 +215,7 @@ class _Screen21State extends State<Screen21> {
                         physics: const BouncingScrollPhysics(),
                         child: Row(children: [
                           const SizedBox(
-                              width: 75,
+                              width: 90,
                               child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_2,
                                   style: CustomStyle.answer)),
                           const SizedBox(width: 2),
@@ -306,7 +306,7 @@ class _Screen21State extends State<Screen21> {
                         physics: const BouncingScrollPhysics(),
                         child: Row(children: [
                           const SizedBox(
-                              width: 75,
+                              width: 90,
                               child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_3,
                                   style: CustomStyle.answer)),
                           const SizedBox(width: 2),
@@ -396,7 +396,7 @@ class _Screen21State extends State<Screen21> {
                         scrollDirection: Axis.horizontal,
                         child: Row(children: [
                           const SizedBox(
-                              width: 75,
+                              width: 90,
                               child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_4,
                                   style: CustomStyle.answer)),
                           const SizedBox(width: 2),
@@ -487,7 +487,7 @@ class _Screen21State extends State<Screen21> {
                         physics: const BouncingScrollPhysics(),
                         child: Row(children: [
                           const SizedBox(
-                              width: 75,
+                              width: 90,
                               child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_5,
                                   style: CustomStyle.answer)),
                           const SizedBox(width: 2),
@@ -577,10 +577,26 @@ class _Screen21State extends State<Screen21> {
                         scrollDirection: Axis.horizontal,
                         physics: const BouncingScrollPhysics(),
                         child: Row(children: [
-                          const SizedBox(
-                              width: 75,
-                              child: Text(SectionC.SECTION_C_QUESTION_40_LEFT_6,
-                                  style: CustomStyle.answer)),
+                          SizedBox(
+                              width: 90,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                      SectionC.SECTION_C_QUESTION_40_LEFT_6,
+                                      style: CustomStyle.answer),
+                                  SizedBox(
+                                    height: 40,
+                                    child: TextField(
+                                      controller: question40Controller,
+                                      style: CustomStyle.answer,
+                                      textAlign: TextAlign.start,
+                                      decoration:
+                                          CustomStyle.answerInputDecoration,
+                                    ),
+                                  )
+                                ],
+                              )),
                           const SizedBox(width: 2),
                           const VerticalDivider(
                             color: Color(0xffD1D0BD),

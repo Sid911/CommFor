@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ifri/constants/section_b.dart';
 import 'package:ifri/style/custom_button.dart';
-import 'package:ifri/style/custom_option.dart';
+import 'package:ifri/style/custom_multi_select.dart';
 import 'package:ifri/style/custom_style.dart';
 import 'package:ifri/ui/section_b/screen6.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -18,7 +18,7 @@ class Screen5 extends StatefulWidget {
 class _Screen5State extends State<Screen5> {
   DatabaseReference? ref;
   String screenName = "screen_5";
-  String _response = "";
+  List<String> _response = [];
   bool isLoading = true;
   String? userId;
   late FirebaseAuthService authService;
@@ -39,7 +39,7 @@ class _Screen5State extends State<Screen5> {
     setData();
   }
 
-  void setResponse(String value) async {
+  void setResponse(List<String> value) async {
     _response = value;
   }
 
@@ -54,7 +54,7 @@ class _Screen5State extends State<Screen5> {
         .child("response")
         .get();
     setState(() {
-      _response = null == res.value ? "" : res.value.toString();
+      // _response[0] = null == res.value ? "" : res.value.toString();
 
       isLoading = false;
     });
@@ -73,6 +73,12 @@ class _Screen5State extends State<Screen5> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> reportList = [
+      'Agriculture',
+      'Social infrastructure (schools, hospitals, etc.)',
+      'Industry',
+      'Other'
+    ];
     if (isLoading) {
       return Container();
     } else {
@@ -139,12 +145,12 @@ class _Screen5State extends State<Screen5> {
                             const SizedBox(
                               height: 5,
                             ),
-                            CustomOption.optionRadioButtons(const [
-                              'Agriculture',
-                              'Social infrastructure (schools, hospitals, etc.)',
-                              'Industry',
-                              'Other'
-                            ], true, _response, setResponse),
+                            MultiSelectChip(
+                              reportList: reportList,
+                              onSelectionChanged: (selectedList) {
+                                setResponse(selectedList);
+                              },
+                            ),
                           ],
                         ),
                       ),

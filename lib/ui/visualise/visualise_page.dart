@@ -90,8 +90,6 @@ class _VisualisePageState extends State<VisualisePage> {
           ),
           cards.isEmpty
               ? Container(
-                  height: 400,
-                  width: 400,
                   alignment: Alignment.center,
                   child: const Text(
                     "No Visualisations Found :(",
@@ -109,12 +107,19 @@ class _VisualisePageState extends State<VisualisePage> {
     );
   }
 
-  Future<Map<String, String>> getStats({required String uid}) async {
+  Future<Map<String, Map<String, dynamic>>> getStats(
+      {required String uid}) async {
     final response = await dio.get("/tasks/$uid");
-    final dict = Map<String, String>.from(response.data);
+    final dict = Map<String, Map<String, dynamic>>.from(response.data);
     List<Widget> temp = List.empty(growable: true);
-    dict.forEach((key, value) {
-      temp.add(VizCard(imageURL: value, name: key));
+    dict.forEach((key, Map<String, dynamic> value) {
+      List<String> urls = List.empty(growable: true);
+      value.values.forEach((element) {
+        urls.add(element as String);
+      });
+      temp.add(
+        VizCard(imageURLs: urls, names: value.keys.toList()),
+      );
     });
     setState(() {
       cards = temp;
